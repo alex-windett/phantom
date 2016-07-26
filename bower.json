@@ -1,0 +1,28 @@
+{
+  "name": "freddies-flowers",
+  "description": "",
+  "main": "public/src/index.js",
+  "authors": [
+    "Alex Windett <alex@bigfish.co.uk>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "6.1.2",
+    "foundation-icon-fonts": "*",
+    "modernizr": "~3.3.1",
+    "waypoints": "jquery-waypoints#^4.0.0",
+    "bower": "*",
+    "install": "^1.0.4",
+    "placeholders": "^4.0.1",
+    "foundation-apps": "^1.2.0"
+  }
+}
