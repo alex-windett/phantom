@@ -17,30 +17,57 @@ class BookmarkList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            canSubmit: false,
-            isUniqueEmail: true,
+            inputValue: false,
+            disabledButton: true
         }
+
+        // this.submitForm         = this.submitForm.bind(this)
+        // this.handleInputChange  = this.handleInputChange.bind(this)
+
+    }
+
+    handleInputChange(event) {
+        this.setState({
+            inputValue: event.target.value
+        }, _ => this.checkButton() )
+    }
+
+    checkButton() {
+        this.setState({
+            disabledButton: this.state.inputValue !== '' ? false : true
+        })
+    }
+
+    submitForm(event) {
+        event.preventDefault()
+        this.props.nextStep()
     }
 
 
     render () {
+        var bookmarks = this.props.store.bookmarks.map( (bookmark, index) => {
+            return (
+                <li key={index}>
+                    <a href={bookmark.url ? bookmark.url : '#'}>
+                        {bookmark.name}
+                    </a>
+                </li>
+            )
+        })
+
         return (
             <div className="decoration decoration__plain registration__form">
                 <h1>List of all the bookmarks</h1>
 
-                <form refs="addNewBookark">
-                    <input type="text"/>
+                <form refs="addNewBookark" onSubmit={this.submitForm.bind(this)}>
+                    <input type="text" placeholder="Add a new bookmark" onChange={this.handleInputChange.bind(this)}/>
 
-                    <button type="submit" onClick={this.submitForm}>Add a bookmark</button>
+                    <button disabled={this.state.disabledButton} className="button button__primary" type="submit" >Add a bookmark</button>
                 </form>
 
                 <h2>Check out all the bookmarks</h2>
                 <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    {bookmarks}
                 </ol>
             </div>
         );

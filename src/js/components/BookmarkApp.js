@@ -5,7 +5,7 @@ import Bookmark                             from './Bookmark/Bookmark'
 
 function mapStateToProps(state) {
     return {
-        registrationStatus: state.registrationStatus
+        bookmarks: state.bookmarks
     }
 }
 
