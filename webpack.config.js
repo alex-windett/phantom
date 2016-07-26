@@ -15,7 +15,7 @@ module.exports = config = {
         },
         output: {
             path: PATHS.build,
-            filename: '[name].js?v=[hash]',
+            filename: '[name].js',
             resourcesPath: './public'
         },
         resolve: {

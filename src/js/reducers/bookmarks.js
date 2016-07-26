@@ -2,6 +2,7 @@ import {
     CREATE_BOOKMARK,
     EDIT_BOOKMARK,
     DELETE_BOOKMARK,
+    SAVE_FORM_DATA,
 } from '../constants/ActionConstants'
 
 function bookmarks(state = [], action ) {
@@ -9,7 +10,8 @@ function bookmarks(state = [], action ) {
         case CREATE_BOOKMARK:
 
             return {
-
+                ...state,
+                ...action.data
             }
 
         case EDIT_BOOKMARK:
@@ -18,7 +20,16 @@ function bookmarks(state = [], action ) {
             }
 
         case DELETE_BOOKMARK:
-            return {}
+            let id = action.data
+            // debugger
+            return {
+                // state.filter(c => c.id !== id)
+            }
+
+        case SAVE_FORM_DATA:
+            return {
+                savedInputValue: action.input
+            }
 
         default:
             return state

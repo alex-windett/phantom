@@ -1,26 +1,38 @@
 import axios from 'axios'
 import * as Action from '../constants/ActionConstants'
 
-export function addBookmark() {
+export function addBookmark(data) {
     return( dispatch ) => {
         dispatch({
-            type: Action.CREATE_BOOKMARK
+            type: Action.CREATE_BOOKMARK,
+            data
         })
     }
 }
 
-export function editBookmark() {
+export function editBookmark(data) {
     return( dispatch ) => {
         dispatch({
-            type: Action.EDIT_BOOKMARK
+            type: Action.EDIT_BOOKMARK,
+            data
         })
     }
 }
 
-export function deleteBookmark() {
+export function deleteBookmark(id) {
     return( dispatch ) => {
         dispatch({
-            type: Action.DELETE_BOOKMARK
+            type: Action.DELETE_BOOKMARK,
+            id
+        })
+    }
+}
+
+export function savedFormData(input) {
+    return( dispatch ) => {
+        dispatch({
+            type: Action.SAVE_FORM_DATA,
+            input
         })
     }
 }

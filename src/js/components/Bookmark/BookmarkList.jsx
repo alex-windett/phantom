@@ -1,18 +1,26 @@
-import React            from 'react'
+import React, { Component }            from 'react'
 
-import Formsy           from 'formsy-react'
-import axios            from 'axios'
-import Input            from '../FormElements/Input'
+class BookmarkItem extends Component {
 
-import { passwordLengthMin } from '../../constants/FormConstants'
-import { accountURL } from '../../constants/GlobalConstants'
-import {
-    validateUniqueEmailURL,
-    validateReferalCode,
-    getQueryFromURL
-}  from '../../helpers/functions'
+    constructor(props) {
+        super(props)
+    }
 
-class BookmarkList extends React.Component {
+    render() {
+
+        return (
+            <li>
+                <a href={this.props.url ? this.props.url : '#'}>
+                    {this.props.name}
+                </a>
+                <button className="button button__primary" onClick={this.props.edit}>Edit</button>
+                <button className="button button__primary" onClick={this.props.delete}>Delete</button>
+            </li>
+        )
+    }
+}
+
+class BookmarkList extends Component {
 
     constructor(props) {
         super(props)
@@ -20,9 +28,6 @@ class BookmarkList extends React.Component {
             inputValue: false,
             disabledButton: true
         }
-
-        // this.submitForm         = this.submitForm.bind(this)
-        // this.handleInputChange  = this.handleInputChange.bind(this)
 
     }
 
@@ -40,18 +45,24 @@ class BookmarkList extends React.Component {
 
     submitForm(event) {
         event.preventDefault()
+        this.props.store.savedFormData(this.state.inputValue)
         this.props.nextStep()
     }
 
 
     render () {
-        var bookmarks = this.props.store.bookmarks.map( (bookmark, index) => {
+
+        const items = this.context.bookmarks.map( (bookmark, index) => {
+
             return (
-                <li key={index}>
-                    <a href={bookmark.url ? bookmark.url : '#'}>
-                        {bookmark.name}
-                    </a>
-                </li>
+                <BookmarkItem
+                    {...bookmark}
+                    key={index}
+                    edit={this.context.store.editBookmark}
+                    delete={this.context.store.deleteBookmark}
+                    bookmarks={this.context.store.bookmarks}
+                    index={index}
+                    />
             )
         })
 
@@ -67,17 +78,16 @@ class BookmarkList extends React.Component {
 
                 <h2>Check out all the bookmarks</h2>
                 <ol>
-                    {bookmarks}
+                    {items}
                 </ol>
             </div>
         );
     }
 }
 
-BookmarkList.propTypes = {
-    nextStep: React.PropTypes.func.isRequired,
-    saveValues: React.PropTypes.func.isRequired,
-    fieldValues: React.PropTypes.object
-}
+BookmarkList.contextTypes = {
+    bookmarks: React.PropTypes.array || React.PropTypes.object,
+    store: React.PropTypes.object
+};
 
 export default BookmarkList
