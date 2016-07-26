@@ -1,0 +1,21 @@
+.dashboard {
+
+    &__item {
+
+        &--deliveries {
+            @import 'deliveries';
+        }
+
+        &--share {
+            @import 'share';
+        }
+
+        &--addresses {
+            @import 'manage-addresses';
+        }
+
+        &--bankdetails {
+            @import 'manage-bank-details';
+        }
+    }
+}

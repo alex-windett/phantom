@@ -1,0 +1,33 @@
+.color {
+    font-family: $font__secondary;
+
+    &__display {
+        display: inline-block;
+        width: 20%;
+        height: rem-calc(100);
+        text-align: center;
+        border: solid;
+
+    }
+}
+
+.grid {
+	padding: rem-calc(10);
+
+	.row {
+		padding: 0;
+	}
+
+	.columns {
+		height: rem-calc(20);
+		border: 1px solid #aaa;
+		color: #333;
+		background: #eee;
+		text-align: center;
+
+		&:nth-child(even) {
+			background: #333;
+			color: #eee;
+		}
+	}
+}

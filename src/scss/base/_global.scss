@@ -1,0 +1,71 @@
+.columns,
+.column {
+    position: relative;
+
+    @include breakpoint(small only) {
+        & + & {
+            margin-top: rem-calc(20);
+        }
+    }
+}
+
+.row {
+    + .row {
+
+        margin-top: rem-calc(20);
+
+        @include breakpoint(medium up) {
+            margin-top: rem-calc(40);
+        }
+    }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.main-content-wrapper {
+    padding: rem-calc(0 10);
+
+    @include breakpoint(medium up) {
+        padding: rem-calc(20 0);
+    }
+}
+
+.row.body__wrapper {
+    margin-top: rem-calc(110);
+
+    @include breakpoint(medium up) {
+        margin-top: rem-calc(115)
+    }
+}
+
+.cover {
+
+    &--active {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 999;
+    }
+}
+
+
+@include breakpoint(medium up) {
+    .p__paddedd {
+        margin: 0 auto;
+        width: 60%;
+    }
+}
+
+// ****************************************
+// Block Grid gutter
+// * Add a spall space above block grid items on mobile
+// ****************************************
+@include breakpoint(small only) {
+    [class*="small-up-"] {
+        .column + .column {
+            margin-top: rem-calc(20);
+        }
+    }
+}

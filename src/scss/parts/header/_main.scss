@@ -1,0 +1,67 @@
+.header {
+
+    &__main {
+
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: $color__background;
+        padding-top: rem-calc(20);
+        padding-bottom: 0;
+        z-index: 100; // High z-index to make sure that nav is above all other content
+
+        @include breakpoint(small only) {
+            left: 0;
+            padding: rem-calc(20 0 0);
+
+            .columns,
+            .column {
+
+                margin-top: 0;
+            }
+        }
+
+        // Sticky Nav
+        &--sticky {
+
+            padding-top: rem-calc(3);
+            padding-bottom: rem-calc(10);
+
+            @include breakpoint(small only) {
+                padding-top: 0;
+            }
+
+            .useraccess {
+                margin-top: rem-calc(0);
+
+                &__wrapper {
+                    margin-top: 0;
+                }
+
+                &__item {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+
+            .contact__header--title {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.homelogo {
+    width: 100px;
+
+    @include breakpoint(medium up) {
+        width: rem-calc(176);
+    }
+
+    &--sticky {
+
+        @include breakpoint(medium up) {
+            width: rem-calc(100);
+        }
+    }
+}

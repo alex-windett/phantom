@@ -1,0 +1,30 @@
+.accordion {
+    border: none;
+    background: transparent;
+
+    &__item + &__item {
+        border-top: 1px solid $color--primary--dark;
+    }
+
+    &__item {
+        padding-left: rem-calc(20);
+
+        @include pseudo-el(before, 10px, 10px) {
+            background: url($img-deco-path + 'accordion-arrow.png');
+            top: 22px;
+            left: 0;
+        }
+
+        &.active {
+            @include pseudo-el(before, 10px, 10px) {
+                background: url($img-deco-path + 'accordion-arrow-open.png');
+                top: 22px;
+                left: 0;
+            }
+        }
+    }
+
+    &__content {
+        padding: 0;
+    }
+}

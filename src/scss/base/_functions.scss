@@ -1,0 +1,22 @@
+/**
+    Asset URL builder
+    @access private
+    @param {String} $asset-type-path    - Asset type path. Matching the path from the asset root
+    @param {String} $file               - Asset file name, including extension
+    @return {URL}                       - A 'url()' function leading to the asset
+*/
+@function asset($asset-type-path, $file) {
+    @return url($asset-base-path + $asset-type-path + '/' + $file);
+}
+
+/**
+    Image asset helper
+    @access public
+    @param {String} $type     - Asset file type, match directory name
+    @param {String} $file     - Asset file name, including extension
+    @return {URL}             - A 'url()' function leading to the image
+    @require {function} asset
+*/
+@function image($type, $file) {
+    @return asset('images/' + $type, $file);
+}

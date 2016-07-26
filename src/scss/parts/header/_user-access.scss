@@ -1,0 +1,59 @@
+.useraccess {
+
+    // TODO: Try and remove important
+    margin-top: rem-calc(3) !important;
+
+    @include breakpoint(small only) {
+        margin-top: 0 !important;
+    }
+
+    &__wrapper {
+        text-align: right;
+
+        @include breakpoint(medium up) {
+            margin-top: rem-calc(20);
+        }
+
+        @include small-landscape() {
+            margin-top: 0;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+
+        @include breakpoint(small only) {
+            display: block;
+        }
+
+        @include small-landscape() {
+            margin: 0;
+        }
+
+        & + & {
+            @include breakpoint(medium up) {
+                margin-left: 40px;
+
+                @include pseudo-el(before, 20px, 20px, "") {
+                    content: " | ";
+                    left: -42px;
+                    top: 0;
+                }
+            }
+        }
+
+        @include breakpoint(small only) {
+            &--register {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media screen and (max-width:1040px) {
+
+        &__wrapper,
+        h2 {
+            margin-top: 0;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.deliveries {
+
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__introduction {
+        margin-top: 0;
+        padding: rem-calc(0 70);
+    }
+
+    &__more {
+        margin-top: rem-calc(10);
+        width: 50%;
+        text-decoration: underline;
+
+        &--earlier {
+            float: left;
+        }
+
+        &--later {
+            float: right;
+            padding-right: rem-calc(5);
+            text-align: right;
+        }
+    }
+}
+
+.delivery {
+    // display: none;
+    border-bottom: 1px solid $color__primary--mid  ;
+    margin-bottom: 0;
+
+    &:first-of-type {
+        border-top: 1px solid $color__primary--mid ;
+    }
+
+    &__date {
+        display: block;
+        width: 100%;
+        padding: rem-calc(10 0 10 17);
+        float: right;
+
+        &:before {
+            top: 5px;
+            right: 0;
+        }
+    }
+}

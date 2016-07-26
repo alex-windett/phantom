@@ -1,0 +1,98 @@
+@include breakpoint(small only) {
+    .menu-column {
+        position: absolute;
+        bottom: 0;  
+    }
+}
+
+.menuburger {
+    // At the moment the menu should only be seen on the homepage
+    // The CSS is over written in _homepage.scss
+    display: none;
+    position: relative;
+    bottom: 0;
+    left: 0;
+
+    @include breakpoint(small only) {
+        top: -10px;
+        bottom: auto;
+    }
+
+    &__images {
+        position: relative;;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        height: rem-calc(15);
+        width: rem-calc(50);
+    }
+
+    &__bar {
+        position: absolute;
+
+        &:nth-child(2) { top: 5px }
+        &:nth-child(3) { top: 10px }
+    }
+
+    &__title {
+        position: absolute;
+        left: 30px;
+        top: 0;
+    }
+
+    &__content {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        margin: 0;
+        padding: rem-calc(8 20 5 50);
+
+        background: white;
+        @extend %boxshadow;
+
+        list-style-type: none;
+        z-index: 1;
+
+        @include breakpoint(small only) {
+            width: rem-calc(170);
+            top: 30px;
+        }
+
+        .item {
+
+            &__title {
+                @include hover-transition(text, $color__primary--dark, $color__primary--mid);
+
+                $image: $img-icon-path + 'burger-menu-bar.png';
+                @include pseudo-el(before, 30px, 10px, $image) {
+                    left: -33px;
+                    top: 7px;
+                }
+
+                &:hover {
+                    text-decoration: none !important; // Overirding high specificity in legacy style
+                }
+
+                @include breakpoint(small only) {
+                    &--register {
+                        margin-top: rem-calc(14);
+                    }
+                }
+
+                &--active {
+                    $image: $img-icon-path + 'burger-menu-item-active.png';
+                    @include pseudo-el(before, 30px, 25px, $image) {
+                        top: -1px;
+                    }
+                }
+
+                @include small-landscape() {
+                    &--logout {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

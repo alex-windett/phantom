@@ -1,0 +1,29 @@
+@mixin dropdown-background($icon-image) {
+    background-image: image($icon, $icon-image);
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+    -ms-background-position: 97% 50%;
+}
+
+select,
+.dropdown {
+
+    width: 100%;
+    max-width: 100%;
+    background: white;
+
+    @include dropdown-background('dropdown-arrow.png');
+
+    // ****************************************
+    // Dropdown Error
+    // ****************************************
+    &__error {
+        color: $color__warning;
+        @extend .input__error;
+        @include dropdown-background('dropdown-arrow-error.png');
+
+        &--description {
+            color: $color__warning;
+        }
+    }
+}

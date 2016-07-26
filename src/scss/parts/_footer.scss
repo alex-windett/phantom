@@ -1,0 +1,38 @@
+@import './social-list';
+
+.footer {
+    margin-top: rem-calc(50);
+
+    &__company {
+        margin: 0 auto;
+        text-align: center;
+        list-style-type: none;
+
+        @include breakpoint(small only) {
+            &--item + &--item {
+                margin-top: rem-calc(10);
+            }
+        }
+
+        @include breakpoint(medium up) {
+            &--item {
+                margin: 0;
+                display: inline-block;
+                padding: rem-calc(0 13);
+
+                & + & {
+
+                    @include pseudo-el(before, 5px, 30px) {
+                        left: -4px;
+                        top: 0;
+                        content: " | ";
+                    }
+                }
+            }
+        }
+    }
+
+    &__social {
+        margin-top: 0 !important; // Overrides foundation styles of .row + .row
+    }
+}

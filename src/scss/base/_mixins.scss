@@ -1,0 +1,94 @@
+// Needs to be a mixin not a placeholder as it can't be used in media querry
+@mixin pseudos() {
+    content: '';
+    position: absolute;
+}
+
+@mixin pseudo-el( $el, $el-width, $el-height, $img: "", $parent-position: relative ) {
+	@if $el == "before" or $el == "after" {
+
+		position: $parent-position;
+
+		&:#{$el} {
+			@include pseudos();
+			width: $el-width;
+			height: $el-height;
+
+			@if $img != "" {
+				content: "";
+				background: url($img) no-repeat;
+			}
+
+			@content;
+		}
+	} @else {
+		@error "`#{$el}` is not a valid pseudo-element.";
+	}
+}
+
+@mixin hover-transition( $type, $color, $color__hover) {
+    $transition: ease-in-out all 0.5s;
+
+	@if $type == 'button' {
+		background: $color;
+		transition: $transition;
+
+		&:hover {
+			background: $color__hover;
+			transition: $transition;
+		}
+
+        @content;
+	} @else if $type == 'text' {
+		color: $color;
+		transition: $transition;
+
+		&:hover {
+			color: $color__hover;
+			transition: $transition;
+            text-decoration: underline;
+		}
+
+        @content;
+	} @else {
+		@error "`#{$type}` is not a valid hover-state. The options are either for 'button' or 'text'";
+	}
+}
+
+@mixin move-z($index, $position: relative) {
+	position: $position;
+	z-index: $index;
+}
+
+@mixin placeholder($color) {
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $color;
+        text-transform: none;
+        @content;
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color;
+        text-transform: none;
+        @content;
+    }
+
+    &:-ms-input-placeholder { /* IE 10+ */
+        color: $color;
+        text-transform: none;
+        @content;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color;
+        text-transform: none;
+        @content;
+    }
+}
+
+@mixin small-landscape() {
+    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
+        @content;
+    }
+}
