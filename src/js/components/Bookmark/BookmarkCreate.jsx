@@ -6,17 +6,17 @@ class BookmarkCreate extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            inputValue: false,
-            disabledButton: true,
+            inputValue: this.props.store.bookmarks.savedInputValue,
+            inputNameValue: false,
+            disabledButton: false,
             bookmarkData: false,
             isValidURL: false,
-            url: this.context.bookmarks.savedInputValue
         }
 
     }
 
     componentWillMount() {
-        this.checkURL(this.context.bookmarks.savedInputValue)
+        this.checkURL(this.props.store.bookmarks.savedInputValue)
     }
 
     checkURL(url) {
@@ -33,12 +33,18 @@ class BookmarkCreate extends React.Component {
         })
     }
 
-    handleInputChange(event) {
+    handleURLInputChange(event) {
         this.setState({
             inputValue: event.target.value
         }, _ => {
             this.checkButton()
             this.checkURL(this.state.inputValue)
+        })
+    }
+
+    handleNameInputChange(event) {
+        this.setState({
+            inputNameValue: event.target.value
         })
     }
 
@@ -50,7 +56,8 @@ class BookmarkCreate extends React.Component {
 
     submitForm(event) {
         event.preventDefault()
-        this.context.store.addBookmark(this.state.bookmarkData)
+        debugger
+        this.props.store.addBookmark(this.state.inputValue, this.state.inputNameValue)
     }
 
     showPagePreview() {
@@ -62,7 +69,7 @@ class BookmarkCreate extends React.Component {
                 <div>
                     <h3>Page Preview</h3>
                     <p>Is this the page you were after?</p>
-                    <iframe src={this.state.url} width="500px" height="500px"></iframe>
+                    <iframe src={this.state.inputValue} width="500px" height="500px"></iframe>
                 </div>
             )
         } else {
@@ -79,8 +86,13 @@ class BookmarkCreate extends React.Component {
                 <form refs="addNewBookark" onSubmit={this.submitForm.bind(this)}>
                     <input
                         type="text"
-                        defaultValue={this.context.bookmarks.savedInputValue}
-                        onChange={this.handleInputChange.bind(this)}
+                        defaultValue={this.props.store.bookmarks.savedInputValue}
+                        onChange={this.handleURLInputChange.bind(this)}
+                        />
+                    <input
+                        type="text"
+                        placeholder="Create a name for the bookmark (Optional)"
+                        onChange={this.handleNameInputChange.bind(this)}
                         />
 
                     <button disabled={this.state.disabledButton} className="button button__primary" type="submit" >Confirm</button>
@@ -91,10 +103,5 @@ class BookmarkCreate extends React.Component {
         );
     }
 }
-
-BookmarkCreate.contextTypes = {
-    bookmarks: React.PropTypes.array || React.PropTypes.object,
-    store: React.PropTypes.object
-};
 
 export default BookmarkCreate

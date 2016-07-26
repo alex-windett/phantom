@@ -1,11 +1,12 @@
 import axios from 'axios'
 import * as Action from '../constants/ActionConstants'
 
-export function addBookmark(data) {
+export function addBookmark(name, displayName) {
     return( dispatch ) => {
         dispatch({
             type: Action.CREATE_BOOKMARK,
-            data
+            name,
+            displayName
         })
     }
 }
