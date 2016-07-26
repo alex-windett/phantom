@@ -32,6 +32,7 @@ function bookmarks(state = [], action ) {
 
         case SAVE_FORM_DATA:
             return {
+                ...state,
                 savedInputValue: action.input
             }
 

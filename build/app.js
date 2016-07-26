@@ -7821,9 +7821,9 @@
   \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _ActionConstants=__webpack_require__(/*! ../constants/ActionConstants */ 231);function _toConsumableArray(arr){if(Array.isArray(arr)){for(var i=0,arr2=Array(arr.length);i<arr.length;i++){arr2[i]=arr[i];}return arr2;}else{return Array.from(arr);}}function bookmarks(){var state=arguments.length<=0||arguments[0]===undefined?[]:arguments[0];var action=arguments[1];switch(action.type){case _ActionConstants.CREATE_BOOKMARK:debugger;return[].concat(_toConsumableArray(state.bookmarks),[{id:Date.now(),name:action.name,displayName:action.displayName}]);case _ActionConstants.EDIT_BOOKMARK:return{};case _ActionConstants.DELETE_BOOKMARK:var id=action.data;// debugger
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _ActionConstants=__webpack_require__(/*! ../constants/ActionConstants */ 231);function _toConsumableArray(arr){if(Array.isArray(arr)){for(var i=0,arr2=Array(arr.length);i<arr.length;i++){arr2[i]=arr[i];}return arr2;}else{return Array.from(arr);}}function bookmarks(){var state=arguments.length<=0||arguments[0]===undefined?[]:arguments[0];var action=arguments[1];switch(action.type){case _ActionConstants.CREATE_BOOKMARK:debugger;return[].concat(_toConsumableArray(state),[{id:Date.now(),name:action.name,displayName:action.displayName}]);case _ActionConstants.EDIT_BOOKMARK:return{};case _ActionConstants.DELETE_BOOKMARK:var id=action.data;// debugger
 	return{// state.filter(c => c.id !== id)
-	};case _ActionConstants.SAVE_FORM_DATA:return{savedInputValue:action.input};default:return state;}}exports.default=bookmarks;
+	};case _ActionConstants.SAVE_FORM_DATA:return _extends({},state,{savedInputValue:action.input});default:return state;}}exports.default=bookmarks;
 
 /***/ },
 /* 231 */
