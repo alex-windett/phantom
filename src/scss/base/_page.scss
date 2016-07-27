@@ -27,21 +27,9 @@ li {
 
 a {
     font-family: inherit;
-    text-decoration: none;
+    text-decoration: underline;
 
     @include hover-transition(text, $color__primary--dark, $color__primary--mid);
-
-    &:hover {
-        text-decoration: none;
-    }
-
-    &.tel {
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: none;
-        }
-    }
 }
 
 h5,

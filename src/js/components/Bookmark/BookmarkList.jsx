@@ -40,14 +40,18 @@ class BookmarkItem extends Component {
                 </a>
 
                 { this.state.isEditing ?
-                    <div className="clearfix">
-                        <input defaultValue={this.props.name} onChange={this.inputChange.bind(this)}/>
-                        <button onClick={this.submitEdit.bind(this)}>Update</button>
+                    <div className="clearfix" className="bookmarklist__item--edit">
+                        <input defaultValue={this.props.name} onChange={this.inputChange.bind(this)} type="text"/>
+                        <button type="button" className="button button__success" onClick={this.submitEdit.bind(this)}>Update</button>
                     </div> : undefined }
 
-                <footer className="clearfix">
-                    <button className="button button__success" onClick={this.toggleEdit.bind(this)}>Edit</button>
-                    <button className="button button__warning" onClick={ () => this.props.delete(this.props.index)}>Delete</button>
+                <footer>
+                    <i  className="icon-pencil pointer"
+                        onClick={this.toggleEdit.bind(this)}></i>
+
+                    <i
+                        className="icon-trash-empty pointer"
+                        onClick={ () => this.props.delete(this.props.index)}></i>
                 </footer>
             </li>
         )

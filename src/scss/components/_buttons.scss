@@ -49,6 +49,19 @@
         }
     }
 
+    &__secondary {
+        $button--hover: darken($color__cta--secondary, 20%);
+
+
+        @include hover-transition(button, $color__cta--secondary, $button--hover) {
+
+            &:hover {
+                // Force white on hover
+                color: white;
+            }
+        }
+    }
+
     &__warning {
         $button--hover: darken($color__warning, 20%);
 

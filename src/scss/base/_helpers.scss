@@ -6,10 +6,6 @@
 	}
 }
 
-%boxshadow {
-	box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.2);
-}
-
 .plainlist {
 	margin: 0;
 	padding: 0;
@@ -26,12 +22,10 @@
 	text-align: center;
 }
 
-@include breakpoint(medium up) {
-	.padder {
-		margin: rem-calc(50 0);
-	}
-}
-
 .clear {
 	clear: both;
+}
+
+.pointer {
+	cursor: pointer;
 }

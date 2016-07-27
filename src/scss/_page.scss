@@ -2,5 +2,15 @@
 
     &__item {
         margin-bottom: rem-calc(10);
+
+        &--edit {
+            margin-bottom: rem-calc(20);
+
+            @include breakpoint(medium-up) {
+                input {
+                    max-width: 40%;
+                }
+            }
+        }
     }
 }
