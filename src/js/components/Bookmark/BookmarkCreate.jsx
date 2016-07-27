@@ -67,14 +67,14 @@ class BookmarkCreate extends React.Component {
             return (
 
                 <div>
-                    <h3>Page Preview</h3>
+                    <h2>Page Preview</h2>
                     <p>Is this the page you were after?</p>
-                    <iframe src={this.state.inputValue} width="500px" height="500px"></iframe>
+                    <iframe src={this.state.inputValue} width="100%" height="500px"></iframe>
                 </div>
             )
         } else {
             return (
-                <h3>It looks like that isn't a page</h3>
+                <h2>It looks like that isn't a page</h2>
             )
         }
     }
@@ -82,7 +82,7 @@ class BookmarkCreate extends React.Component {
     render () {
 
         return (
-            <div className="decoration decoration__plain registration__form">
+            <div>
                 <form refs="addNewBookark" onSubmit={this.submitForm.bind(this)}>
                     <input
                         type="text"
