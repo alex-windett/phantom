@@ -10,7 +10,8 @@
     "dev": "npm start",
     "build": "NODE_ENV=production webpack --progress --config webpack.production.config.js",
     "clean": "rm -rf ./build",
-    "rebuild": "npm run clean && npm start"
+    "rebuild": "npm run clean && npm start",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "autoprefixer": "^6.3.7",
