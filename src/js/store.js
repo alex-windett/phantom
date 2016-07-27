@@ -33,10 +33,9 @@ const defaultState = {
 }
 
 const createStoreWithMiddleware = applyMiddleware(
-        thunk,
-        save() // Saving done here
-
-    )(createStore)
+    thunk,
+    save() // Saving done here
+)(createStore)
 
 export const store = createStoreWithMiddleware(
     rootReducer,
