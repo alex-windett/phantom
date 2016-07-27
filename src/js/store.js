@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import persistState from 'redux-localstorage'
+import { save, load } from "redux-localstorage-simple"
 
 // import route reducer
 import { rootReducer } from './reducers/index'
@@ -32,14 +32,22 @@ const defaultState = {
     bookmarks
 }
 
-const enhancer = compose(
-    applyMiddleware(thunk),
-    window.devToolsExtension ? window.devToolsExtension() : f => f,
-    persistState()
-)
+const createStoreWithMiddleware = applyMiddleware(
+        thunk,
+        save({
+            states: [
+                bookmarks
+            ]
+        }) // Saving done here
 
-export const store = createStore(
+    )(createStore)
+
+export const store = createStoreWithMiddleware(
     rootReducer,
-    defaultState,
-    enhancer
+    load({
+        states: [
+            bookmarks
+        ]
+    }),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
 )

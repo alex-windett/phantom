@@ -48,7 +48,7 @@
     "react-transform-hmr": "^1.0.4",
     "redbox-react": "^1.2.3",
     "redux": "^3.5.2",
-    "redux-localstorage": "^0.4.1",
+    "redux-localstorage-simple": "^1.0.1",
     "redux-thunk": "^2.1.0",
     "sass-loader": "^3.1.2",
     "script-loader": "^0.7.0",
