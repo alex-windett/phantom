@@ -4,8 +4,8 @@ const ExtractTextPlugin     = require('extract-text-webpack-plugin');
 const LiveReloadPlugin      = require('webpack-livereload-plugin');
 const BowerWebpackPlugin    = require("bower-webpack-plugin");
 const NpmInstallPlugin      = require('npm-install-webpack-plugin');
-const CopyWebpackPlugin     = require('copy-webpack-plugin');
-const PATHS                 = require('../webpack.config')
+const PATHS                 = require('../webpack.config');
+const ClosureCompilerPlugin = require('closure-compiler-webpack-plugin');
 
 module.exports = plugins = {
     common: [
@@ -18,18 +18,13 @@ module.exports = plugins = {
             waypoints: 'waypoints'
         }),
 
-        /**
-            Image min only occurs if image is reference in the CSS of JS
-            For when it doesn,t this copies the files accross
-        */
-        new CopyWebpackPlugin([
-            {
-                // from: path.join(__dirname, PATHS.assets + './src/images/'),
-                // to: path.join(__dirname, PATHS.build + './images')
-                from: path.join(__dirname, '../resources/assets/src/images'),
-                to: path.join(__dirname, '../public/build/images')
-            }
-        ])
+         new ClosureCompilerPlugin({
+            compilation_level: 'ADVANCED',
+            create_source_map: false
+            // Use 'create_source_map: false' to override your webpack
+            // config. Otherwise, anything you set for this option will be
+            // ignored in favour of your 'devtool' and filename configuration.
+        })
     ],
     dev: [
         new webpack.OldWatchingPlugin(),
