@@ -159,6 +159,12 @@ class BookmarkList extends Component {
         return
     }
 
+    jumpToPage(pageNumber) {
+        this.setState({
+            currentPage: pageNumber
+        })
+    }
+
     render () {
         var earliest                = this.state.earliest
         var latest                  = this.state.latest
@@ -186,9 +192,20 @@ class BookmarkList extends Component {
             var items = 'You currently have no bookmarks'
         }
 
+        var paginateNumbers = []
+        for (var i = 0; i <= this.state.numberOfPages; i++) {
+            paginateNumbers.push(
+                <li className={`items__more paginate__item ${i === this.state.currentPage ? 'paginate__item--active' : ''} `}>
+                    <a href="#" onClick={() => this.jumpToPage(i)}>
+                        {i + 1}
+                    </a>
+                </li>
+            )
+        }
+
         return (
             <div>
-                <h1 className="text-center">My Fabulous bookmark manager</h1>
+                <h1 className="text-center">React - Redux Bookmark Manager</h1>
 
                 <form refs="addNewBookark" onSubmit={this.submitForm.bind(this)} className="form form__create">
                     <input type="text" placeholder="Add a new bookmark" onChange={this.handleInputChange.bind(this)}/>
@@ -203,20 +220,26 @@ class BookmarkList extends Component {
                     {items}
                 </ol>
 
-                <footer className="clearfix">
-                    { this.state.showEarlier ? <a
-                        href="#"
-                        onClick={this.earlierDeliveries.bind(this)}
-                        className='no-link items__more deliveries__more--earlier'>
-                        &#60;
-                    </a> : undefined }
+                <footer className="clearfix bookmarklist__footer">
 
-                    { this.state.showLater ? <a
-                        href="#"
-                        onClick={this.laterDeliveries.bind(this)}
-                        className='no-link items__more items__more--later'>
-                        &#62;
-                    </a> : undefined }
+
+                    <ul className="plainlist paginate">
+                        { this.state.showEarlier ? <li className="items__more paginate__item"><a
+                            href="#"
+                            onClick={this.earlierDeliveries.bind(this)}
+                            className='no-link items__more paginate__item'>
+                            &#60;
+                        </a></li> : undefined }
+
+                        {paginateNumbers}
+
+                        { this.state.showLater ? <li className="items__more paginate__item"><a
+                            href="#"
+                            onClick={this.laterDeliveries.bind(this)}
+                            className='no-link items__more paginate__item' >
+                            &#62;
+                        </a></li> : undefined }
+                    </ul>
                 </footer>
             </div>
         );

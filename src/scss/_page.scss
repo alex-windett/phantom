@@ -1,7 +1,13 @@
 .bookmarklist {
+    $container-width: 40%;
 
     @include breakpoint(medium up) {
-        width: 40%;    
+        width: $container-width;
+    }
+
+    &__footer {
+        text-align: center;
+        width: $container-width;
     }
 
     &__item {
@@ -19,13 +25,15 @@
     }
 }
 
-.items__more {
+.paginate {
 
-    &--later {
+    .paginate__item {
+        display: inline-block;
+        font-size: 18px;
+        padding: rem-calc(0 5);
 
-    }
-
-    &--earlier {
-        float: left;
+        &--active {
+            font-weight: bold;
+        }
     }
 }
