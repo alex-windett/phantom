@@ -20,11 +20,11 @@ export function editBookmark(data) {
     }
 }
 
-export function deleteBookmark(id) {
+export function deleteBookmark(index) {
     return( dispatch ) => {
         dispatch({
             type: Action.DELETE_BOOKMARK,
-            id
+            index
         })
     }
 }

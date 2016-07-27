@@ -13,8 +13,8 @@ class BookmarkItem extends Component {
                 <a href={this.props.url ? this.props.url : '#'}>
                     {this.props.name}
                 </a>
-                <button className="button button__primary" onClick={this.props.edit}>Edit</button>
-                <button className="button button__primary" onClick={this.props.delete}>Delete</button>
+                <button className="button button__primary" onClick={ () => this.props.edit(this.props.index)}>Edit</button>
+                <button className="button button__primary" onClick={ () => this.props.delete(this.props.index)}>Delete</button>
             </li>
         )
     }

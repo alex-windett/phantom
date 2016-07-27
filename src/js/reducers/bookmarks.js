@@ -19,18 +19,34 @@ function bookmarks(state = [], action ) {
                 ...state
             }
 
+            // return [
+            //     ...state
+            //     {
+            //     asdsa
+            //     }
+            // ]
+
 
         case EDIT_BOOKMARK:
-            return {
-
-            }
+        debugger
+            return state.map((bookmark, index) => {
+                if (index === action.index) {
+                  // Copy the object before mutating
+                  return Object.assign({}, bookmark, {
+                    name: action.name,
+                    displayName: action.displayName
+                  })
+                }
+                return bookmark
+            })
 
         case DELETE_BOOKMARK:
-            let id = action.data
-            // debugger
-            return {
-                // state.filter(c => c.id !== id)
-            }
+
+            debugger
+            return [
+                    ...state.slice(0, action.index),
+                    ...state.slice(action.index + 1)
+                ]
 
         case SAVE_FORM_DATA:
             return {
