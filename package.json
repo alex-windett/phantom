@@ -3,6 +3,7 @@
   "main": "./src/index.jsx",
   "scripts": {
     "start": "webpack -d --verbose --progress --colors --watch --config webpack.development.config.js",
+    "build:dist": "webpack --optimize-minimize --verbose --progress --colors --config webpack.development.config.js",
     "dev": "npm start",
     "build": "NODE_ENV=production webpack --progress --config webpack.production.config.js",
     "clean": "rm -rf ./build",
