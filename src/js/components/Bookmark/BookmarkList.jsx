@@ -209,7 +209,7 @@ class BookmarkList extends Component {
         }
 
         var paginateNumbers = []
-        for (var i = 0; i <= this.state.numberOfPages; i++) {
+        for (var i = 0; i < this.state.numberOfPages; i++) {
             // Todo: add in links to jump between pages
             paginateNumbers.push(
                 <li key={i} className={`items__more paginate__item ${i === this.state.currentPage ? 'paginate__item--active' : ''} `}>
