@@ -35,7 +35,7 @@ class BookmarkItem extends Component {
 
         return (
             <li className="bookmarklist__item">
-                {this.props.count + 1}. &nbsp; 
+                {this.props.count + 1}. &nbsp;
                 <a target="_blank" href={this.props.name ? this.props.name : '#'}>
                     <strong>{this.props.displayName ? `${this.props.displayName} - ` : undefined }</strong>{this.props.name}
                 </a>
@@ -109,17 +109,16 @@ class BookmarkList extends Component {
     laterDeliveries(event) {
         event.preventDefault()
         this.setState({
-            earliest: this.state.earliest + (this.state.itemsPerPage - 1),
-            latest: this.state.latest + (this.state.itemsPerPage - 1)
+            earliest: this.state.earliest + (this.state.itemsPerPage),
+            latest: this.state.latest + (this.state.itemsPerPage)
         }, _ => this.calculatePaginateVisablity(this.increase) )
     }
 
     earlierDeliveries(event) {
         event.preventDefault()
-        debugger
         this.setState({
-            earliest: this.state.earliest - (this.state.itemsPerPage - 1),
-            latest: this.state.latest - (this.state.itemsPerPage - 1)
+            earliest: this.state.earliest - (this.state.itemsPerPage),
+            latest: this.state.latest - (this.state.itemsPerPage)
         }, _ => this.calculatePaginateVisablity(this.decrease) )
     }
 
