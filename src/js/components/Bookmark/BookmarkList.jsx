@@ -35,6 +35,7 @@ class BookmarkItem extends Component {
 
         return (
             <li className="bookmarklist__item">
+                {this.props.count + 1}. &nbsp; 
                 <a target="_blank" href={this.props.name ? this.props.name : '#'}>
                     <strong>{this.props.displayName ? `${this.props.displayName} - ` : undefined }</strong>{this.props.name}
                 </a>
@@ -115,6 +116,7 @@ class BookmarkList extends Component {
 
     earlierDeliveries(event) {
         event.preventDefault()
+        debugger
         this.setState({
             earliest: this.state.earliest - (this.state.itemsPerPage - 1),
             latest: this.state.latest - (this.state.itemsPerPage - 1)
@@ -194,6 +196,7 @@ class BookmarkList extends Component {
                         <BookmarkItem
                             {...bookmark}
                             key={index}
+                            count={index}
                             edit={this.props.store.editBookmark}
                             delete={this.props.store.deleteBookmark}
                             bookmarks={this.props.store.bookmarks}
@@ -233,9 +236,9 @@ class BookmarkList extends Component {
                 </form>
 
                 <h2>Check out all the bookmarks</h2>
-                <ol className="bookmarklist">
+                <ul className="bookmarklist plainlist">
                     {items}
-                </ol>
+                </ul>
 
                 <footer className="clearfix bookmarklist__footer">
 
