@@ -57,6 +57,7 @@ class BookmarkCreate extends React.Component {
     submitForm(event) {
         event.preventDefault()
         this.props.store.addBookmark(this.state.inputValue, this.state.inputNameValue)
+        this.props.nextStep()
     }
 
     showPagePreview() {

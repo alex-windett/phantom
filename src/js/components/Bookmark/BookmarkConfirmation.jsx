@@ -16,7 +16,12 @@ class BookmarkConfirmation extends React.Component {
 
         return (
             <div className="row decoration decoration__tape decoration__tape--left confirmation">
-                You have successfully created a new BookmarkConfirmation
+                <h1>You have successfully created a new bookmark</h1>
+
+
+                    <button>
+                        <a href="/">return to home page</a>
+                    </button>
             </div>
         )
     }
