@@ -62,6 +62,8 @@ class BookmarkList extends Component {
 
     constructor(props) {
         super(props)
+        this.increase       = 'increase'
+        this.decrease       = 'decrease'
         this.items          = this.props.store.bookmarks.items
         this.itemsLength    = this.items ? this.items.length : 0,
         this.itemsPerPage   = 3
@@ -160,12 +162,14 @@ class BookmarkList extends Component {
     }
 
     jumpToPage(pageNumber) {
+        debugger
         this.setState({
             currentPage: pageNumber
         })
     }
 
     getResultsPerPage(event) {
+        // Needs refactoring
         this.itemsPerPage =
         this.setState({
             itemsPerPage: parseInt(event.target.value),
@@ -203,11 +207,12 @@ class BookmarkList extends Component {
 
         var paginateNumbers = []
         for (var i = 0; i <= this.state.numberOfPages; i++) {
+            // Todo: add in links to jump between pages
             paginateNumbers.push(
                 <li key={i} className={`items__more paginate__item ${i === this.state.currentPage ? 'paginate__item--active' : ''} `}>
-                    <a href="#" onClick={() => this.jumpToPage(i)}>
+                    {/*<a href="#" onClick={() => this.jumpToPage(i - 1)}>*/}
                         {i + 1}
-                    </a>
+                    {/*</a>*/}
                 </li>
             )
         }
