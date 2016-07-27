@@ -18,16 +18,15 @@ function bookmarks(state = [], action ) {
             // return {
             //     ...state
             // }
-
+            debugger
             return [
-                ...state,
+                state,
                 {
                     id: Date.now(),
                     name: action.name,
                     displayName: action.displayName
                 }
             ]
-
 
         case EDIT_BOOKMARK:
             return state.map((bookmark, index) => {

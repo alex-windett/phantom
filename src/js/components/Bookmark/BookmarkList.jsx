@@ -82,7 +82,7 @@ class BookmarkList extends Component {
 
 
     render () {
-
+// debugger
         const items = this.props.store.bookmarks.map( (bookmark, index) => {
 
             return (

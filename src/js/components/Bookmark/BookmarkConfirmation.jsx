@@ -4,10 +4,6 @@ class BookmarkConfirmation extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            friend_code: '',
-            firstName: ''
-        }
     }
 
     render() {
@@ -23,11 +19,6 @@ class BookmarkConfirmation extends React.Component {
             </div>
         )
     }
-}
-
-BookmarkConfirmation.propTypes = {
-    fieldValues: React.PropTypes.object,
-    store: React.PropTypes.object
 }
 
 export default BookmarkConfirmation
