@@ -3,7 +3,10 @@ import {
     EDIT_BOOKMARK,
     DELETE_BOOKMARK,
     SAVE_FORM_DATA,
+    ADD_DEFAULT_LOCAL_STORAGE,
 } from '../constants/ActionConstants'
+
+import { defaultLocalData } from '../lib/data'
 
 const bookmark = (state = [], action) => {
     switch (action.type) {
@@ -70,6 +73,13 @@ function bookmarks(state = [], action ) {
                     ...state.items.slice(0, action.index),
                     ...state.items.slice(action.index + 1)
                 ]
+            }
+
+        case ADD_DEFAULT_LOCAL_STORAGE:
+
+            return {
+
+                items: defaultLocalData
             }
         case SAVE_FORM_DATA:
             return {

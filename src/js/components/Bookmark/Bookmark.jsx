@@ -20,6 +20,12 @@ class Bookmark extends React.Component {
          $(window).scrollTop(0)
     }
 
+    componentWillMount() {
+        if ( !localStorage.redux_localstorage_simple ) {
+            console.log('loading local storage for the first time')
+            this.props.addDefaultLocalStorage()
+        }
+    }
 
     nextStep() {
         this.setState({

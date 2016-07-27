@@ -39,3 +39,11 @@ export function savedFormData(input) {
         })
     }
 }
+
+export function addDefaultLocalStorage() {
+    return( dispatch ) => {
+        dispatch({
+            type: Action.ADD_DEFAULT_LOCAL_STORAGE,
+        })
+    }
+}
