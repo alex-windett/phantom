@@ -16,13 +16,6 @@ class Bookmark extends React.Component {
         }
     }
 
-    // getChildContext() {
-    //     return {
-    //         bookmarks: this.props.bookmarks,
-    //         store: this.props
-    //     }
-    // }
-
     scrollToTopOfWndow() {
          $(window).scrollTop(0)
     }
@@ -40,30 +33,19 @@ class Bookmark extends React.Component {
             case 0:
                 return {
                     element: <BookmarkList
-                        fieldValues={this.state.fieldValues}
                         nextStep={this.nextStep}
-                        saveValues={this.saveValues}
-                        hasSavedValue={this.hasSavedValue}
                         store={this.props}
                         />,
                 }
             case 1:
                 return {
                     element: <BookmarkCreate
-                        scrollTop={this.scrollToTopOfWndow}
-                        fieldValues={this.state.fieldValues}
                         nextStep={this.nextStep}
-                        previousStep={this.previousStep}
-                        saveValues={this.saveValues}
-                        hasSavedValue={this.hasSavedValue}
                         store={this.props} />,
                 }
             case 2:
                 return {
                     element: <BookmarkConfirmation
-                            scrollTop={this.scrollToTopOfWndow}
-                            fieldValues={this.state.fieldValues}
-                            hasSavedValue={this.hasSavedValue}
                             store={this.props}
                             />,
                 }
@@ -76,16 +58,11 @@ class Bookmark extends React.Component {
 
         return (
 
-            <article className="registration__wrapper">
+            <article className="bookmarks bookmarks__wrapper">
                 {currentStep.element}
             </article>
         )
     }
 }
-
-// Bookmark.childContextTypes = {
-//   store: React.PropTypes.object,
-//   bookmarks: React.PropTypes.array || React.PropTypes.object
-// }
 
 export default Bookmark

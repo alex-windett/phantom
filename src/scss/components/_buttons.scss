@@ -1,16 +1,15 @@
-@mixin mobile-button {
-    // padding: 4% 10% 1%;
-    // font-size: 3.5vw;
-    // line-height: 3.5vh;
-}
-
 .button {
-    display: block;
-    vertical-align: top;
-    text-transform: capitalize;
-    border-radius: 10px;
-    margin: 0;
     border: none;
+    box-shadow: 1px 1px 1px grey;
+    color: white;
+    display: block;
+    font-size: 18px;
+    line-height: 25px;
+    margin: 0;
+    padding: rem-calc(10 50);
+    text-transform: capitalize;
+    vertical-align: top;
+
     @extend h3;
 
     @include breakpoint(small only) {
@@ -28,8 +27,8 @@
         }
 
         @include breakpoint(medium up) {
-            margin-top: 0;
             margin-left: rem-calc(20);
+            margin-top: 0;
         }
     }
 
@@ -37,8 +36,10 @@
         text-decoration: none;
     }
 
-    &__primary {
+    &__success {
         $button--hover: darken($color__cta--primary, 20%);
+
+
         @include hover-transition(button, $color__cta--primary, $button--hover) {
 
             &:hover {
@@ -46,43 +47,23 @@
                 color: white;
             }
         }
-        color: white;
-        line-height: 25px;
-        font-size: 10px;
-
-        padding: rem-calc(10 50 5);
-
-        &--large {
-            font-size: 13px;
-        }
     }
 
-    &__secondary {
-        $button--hover: darken($color__cta--secondary, 20%);
-        @include hover-transition(button, $color__cta--secondary, $button--hover)
-        color: black;
-        font-size: 10px;
-        line-height: 25px;
-        padding: rem-calc(10 50 5);
+    &__warning {
+        $button--hover: darken($color__warning, 20%);
 
-        &--incrementer,
-        &--decrementer {
-            display: inline-block;
-            padding: rem-calc(10 10 0);
-        }
+        @include hover-transition(button, $color__warning, $button--hover) {
 
-        &--incrementer {
-            margin-left: rem-calc(10);
-        }
-
-        &--decrementer {
-            margin-right: rem-calc(10);
+            &:hover {
+                // Force white on hover
+                color: white;
+            }
         }
     }
 
     &:disabled {
-        @include hover-transition(button, $color__primary--mid, $color__primary--mid)
         color: black;
+        @include hover-transition(button, $color__primary--mid, $color__primary--mid)
     }
 
     a {

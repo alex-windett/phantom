@@ -1,7 +1,7 @@
 // ****************************************
 // Fonts
 // ****************************************
-$font__primary: "freddiesflowerstitle-webfont", "Times", serif;
+$font__primary: "Roboto-Regular-webfont", "Times", serif;
 $font__secondary: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
   Helvetica, Arial, "Lucida Grande", sans-serif;
 $font__tertiary: Georgia, Times, "Times New Roman", serif;
@@ -32,12 +32,12 @@ $svg: 'svgs';
 // ****************************************
 // Base colors
 // ****************************************
-$color__background: #f2f2f2;
+$color__background: #FAFAFA;
 $color__primary: #ccc;
 $color__primary--dark: #222;
 $color__primary--mid: #959595;
 $color__primary--light: #f4f4f4;
-$color__warning: #C93F3F;
-$color__valid: #547954;
-$color__cta--primary: #60b4d6;
+$color__warning: #D32F2F;
+$color__valid: #4CAF50;
+$color__cta--primary: #4CAF50;
 $color__cta--secondary: #e5eef2;

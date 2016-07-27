@@ -33,19 +33,21 @@ class BookmarkItem extends Component {
     render() {
 
         return (
-            <li>
+            <li className="bookmarklist__item">
                 <a href={this.props.url ? this.props.url : '#'}>
                     {this.props.name}
                 </a>
 
                 { this.state.isEditing ?
-                    <div>
+                    <div className="clearfix">
                         <input defaultValue={this.props.name} onChange={this.inputChange.bind(this)}/>
                         <button onClick={this.submitEdit.bind(this)}>Update</button>
                     </div> : undefined }
 
-                <button className="button button__primary" onClick={this.toggleEdit.bind(this)}>Edit</button>
-                <button className="button button__primary" onClick={ () => this.props.delete(this.props.index)}>Delete</button>
+                <footer className="clearfix">
+                    <button className="button button__success" onClick={this.toggleEdit.bind(this)}>Edit</button>
+                    <button className="button button__warning" onClick={ () => this.props.delete(this.props.index)}>Delete</button>
+                </footer>
             </li>
         )
     }
@@ -164,17 +166,17 @@ class BookmarkList extends Component {
         }
 
         return (
-            <div className="decoration decoration__plain registration__form">
-                <h1>List of all the bookmarks</h1>
+            <div>
+                <h1 className="text-center">My Fabulous bookmark manager</h1>
 
-                <form refs="addNewBookark" onSubmit={this.submitForm.bind(this)}>
+                <form refs="addNewBookark" onSubmit={this.submitForm.bind(this)} className="form form__create">
                     <input type="text" placeholder="Add a new bookmark" onChange={this.handleInputChange.bind(this)}/>
 
                     <button disabled={this.state.disabledButton} className="button button__primary" type="submit" >Add a bookmark</button>
                 </form>
 
                 <h2>Check out all the bookmarks</h2>
-                <ol>
+                <ol clasName="bookmarklist">
                     {items}
                 </ol>
 

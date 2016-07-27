@@ -9,11 +9,11 @@ $font-path: './fonts/';
 
 // the name that will be used in font-family property
 // Add in 'fontello' when needed
-$font-families: 'freddiesflowerstitle-webfont', 'fontello';
+$font-families: 'Roboto-Regular-webfont', 'fontello';
 
 // the filename of your font without the file extension
 // Add in 'fontello' when needed
-$font-filenames: 'freddiesflowerstitle-webfont', 'fontello';
+$font-filenames: 'Roboto-Regular-webfont', 'fontello';
 $i: 1;
 
 @each $font-family in $font-families {
@@ -23,7 +23,6 @@ $i: 1;
 		src: 	url($font-path + nth($font-filenames, $i) + '.eot');
 		src: 	url($font-path + nth($font-filenames, $i) + '.eot?#iefix') format('embedded-opentype'),
 				url($font-path + nth($font-filenames, $i) + '.woff') format('woff'),
-     		 	url($font-path + nth($font-filenames, $i) + '.woff2') format('woff2'),
 				url($font-path + nth($font-filenames, $i) + '.ttf') format('truetype'),
 				url($font-path + nth($font-filenames, $i) + '.svg#' + $font-family) format('svg');
 		font-weight: normal;
