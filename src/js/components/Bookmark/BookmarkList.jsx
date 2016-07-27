@@ -79,7 +79,7 @@ class BookmarkList extends Component {
             showLater: true,
             earliest: 0,
             latest: this.itemsPerPage - 1,
-            inputValid: true
+            inputValid: true,
         }
     }
 
@@ -162,7 +162,6 @@ class BookmarkList extends Component {
     }
 
     jumpToPage(pageNumber) {
-        debugger
         this.setState({
             currentPage: pageNumber
         })
@@ -170,12 +169,14 @@ class BookmarkList extends Component {
 
     getResultsPerPage(event) {
         // Needs refactoring
-        this.itemsPerPage =
-        this.setState({
-            itemsPerPage: parseInt(event.target.value),
-            numberOfPages: Math.ceil(parseInt(event.target.value) / this.itemsPerPage),
-            latest: parseInt(event.target.value) - 1,
-        })
+        var val = event.target.value
+        if ( val !== '' ) {
+            this.setState({
+                itemsPerPage: parseInt(val),
+                numberOfPages: Math.ceil(parseInt(val) / this.itemsPerPage),
+                latest: parseInt(val) - 1,
+            })
+        }
     }
 
     render () {
