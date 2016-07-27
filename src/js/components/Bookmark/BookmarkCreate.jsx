@@ -95,7 +95,7 @@ class BookmarkCreate extends React.Component {
                         onChange={this.handleNameInputChange.bind(this)}
                         />
 
-                    <button disabled={this.state.disabledButton} className="button button__primary" type="submit" >Confirm</button>
+                    <button disabled={this.state.disabledButton} className="button button__success" type="submit" >Confirm</button>
                 </form>
 
                 { this.showPagePreview() }

@@ -36,7 +36,7 @@ class BookmarkItem extends Component {
         return (
             <li className="bookmarklist__item">
                 <a href={this.props.url ? this.props.url : '#'}>
-                    {this.props.name}
+                    <strong>{this.props.displayName ? `${this.props.displayName} -` : undefined }</strong>{this.props.name}
                 </a>
 
                 { this.state.isEditing ?
@@ -164,8 +164,9 @@ class BookmarkList extends Component {
         var latest                  = this.state.latest
 
         if ( this.props.store.bookmarks && this.props.store.bookmarks.items ) {
-
-            var items = this.props.store.bookmarks.items.map( (bookmark, index) => {
+            var items   = this.props.store.bookmarks.items
+                items   = items.reverse() // Get reverse order i.e newest first
+                items   = this.props.store.bookmarks.items.map( (bookmark, index) => {
 
                 if ( index >= earliest && index <= latest ) {
 
@@ -198,7 +199,7 @@ class BookmarkList extends Component {
                 </form>
 
                 <h2>Check out all the bookmarks</h2>
-                <ol clasName="bookmarklist">
+                <ol className="bookmarklist">
                     {items}
                 </ol>
 
@@ -206,25 +207,20 @@ class BookmarkList extends Component {
                     { this.state.showEarlier ? <a
                         href="#"
                         onClick={this.earlierDeliveries.bind(this)}
-                        className='no-link deliveries__more deliveries__more--earlier'>
-                        Earlier Deliveries
+                        className='no-link items__more deliveries__more--earlier'>
+                        &#60;
                     </a> : undefined }
 
                     { this.state.showLater ? <a
                         href="#"
                         onClick={this.laterDeliveries.bind(this)}
-                        className='no-link deliveries__more deliveries__more--later'>
-                        Later Deliveries
+                        className='no-link items__more items__more--later'>
+                        &#62;
                     </a> : undefined }
                 </footer>
             </div>
         );
     }
 }
-
-// BookmarkList.contextTypes = {
-//     bookmarks: React.PropTypes.array || React.PropTypes.object,
-//     store: React.PropTypes.object
-// };
 
 export default BookmarkList

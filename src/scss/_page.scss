@@ -1,5 +1,9 @@
 .bookmarklist {
 
+    @include breakpoint(medium up) {
+        width: 40%;    
+    }
+
     &__item {
         margin-bottom: rem-calc(10);
 
@@ -12,5 +16,16 @@
                 }
             }
         }
+    }
+}
+
+.items__more {
+
+    &--later {
+
+    }
+
+    &--earlier {
+        float: left;
     }
 }
