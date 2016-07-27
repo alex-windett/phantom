@@ -5,6 +5,19 @@ import {
     SAVE_FORM_DATA,
 } from '../constants/ActionConstants'
 
+const bookmark = (state = [], action) => {
+    switch (action.type) {
+        case CREATE_BOOKMARK:
+            return {
+                id: Date.now(),
+                name: action.name,
+                displayName: action.displayName
+            }
+        default:
+            return state
+    }
+}
+
 function bookmarks(state = [], action ) {
     switch (action.type) {
         case CREATE_BOOKMARK:
@@ -18,18 +31,16 @@ function bookmarks(state = [], action ) {
             // return {
             //     ...state
             // }
-            debugger
-            return [
-                state,
-                {
-                    id: Date.now(),
-                    name: action.name,
-                    displayName: action.displayName
-                }
-            ]
+            return {
+                // ...state,
+                items: [
+                    ...state.items,
+                    bookmark(undefined, action)
+                ]
+            }
 
         case EDIT_BOOKMARK:
-            return state.map((bookmark, index) => {
+            return state.items.map((bookmark, index) => {
                 if (index === action.index) {
                     // Copy the object before mutating
                     return Object.assign({}, bookmark, {
@@ -41,8 +52,8 @@ function bookmarks(state = [], action ) {
 
         case DELETE_BOOKMARK:
             return [
-                    ...state.slice(0, action.index),
-                    ...state.slice(action.index + 1)
+                    ...state.items.slice(0, action.index),
+                    ...state.items.slice(action.index + 1)
                 ]
 
         case SAVE_FORM_DATA:
