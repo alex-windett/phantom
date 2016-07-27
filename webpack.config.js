@@ -11,7 +11,6 @@ module.exports = config = {
     common: {
         entry: {
             app: PATHS.src + 'index.jsx',
-            vendor: PATHS.src + 'vendor.js',
         },
         output: {
             path: PATHS.build,

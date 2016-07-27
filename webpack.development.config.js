@@ -34,7 +34,7 @@ module.exports = merge(config.common, {
     sassLoader          : sassLoader,
     // imageWebpackLoader  : imageWebpackLoader,
     // externals           : externals,
-    devtool             : "source-map",
+    // devtool             : "source-map",
     watch               : true,
     plugins             : plugins.dev.concat(plugins.common)
 });
