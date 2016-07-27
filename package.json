@@ -10,7 +10,8 @@
     "dev": "npm start",
     "build": "NODE_ENV=production webpack --progress --config webpack.production.config.js",
     "clean": "rm -rf ./build",
-    "rebuild": "npm run clean && npm start"
+    "rebuild": "npm run clean && npm start",
+     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
     "autoprefixer": "^6.3.7",
@@ -28,6 +29,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-2": "^6.11.0",
     "bower-webpack-plugin": "^0.1.9",
+    "bower": "0.6.x",
     "closure-compiler-webpack-plugin": "^0.1.8",
     "components": "^0.1.0",
     "copy-webpack-plugin": "^3.0.0",
