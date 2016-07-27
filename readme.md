@@ -1,5 +1,7 @@
 # Phantom Bookmarks
 
+I have chosen to use React as creating an app in Angular, for me, wouldn't have met the objectives of the task in time.
+
 A small app create in React, that allows a user to add, edit and delete bookmarks. The app uses local storage to save the bookmarks.
 
 Pagination is set to a default of three items on page load, but can be edit by entering a desired number.

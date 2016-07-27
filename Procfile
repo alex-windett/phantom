@@ -1,1 +1,1 @@
-web: npm install && bower install && npm run build:dist 
+web: bower install && npm run build:dist 
