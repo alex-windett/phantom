@@ -17,14 +17,6 @@ module.exports = plugins = {
             'window.jQuery': 'jquery',
             waypoints: 'waypoints'
         }),
-
-         new ClosureCompilerPlugin({
-            compilation_level: 'ADVANCED',
-            create_source_map: false
-            // Use 'create_source_map: false' to override your webpack
-            // config. Otherwise, anything you set for this option will be
-            // ignored in favour of your 'devtool' and filename configuration.
-        })
     ],
     dev: [
         new webpack.OldWatchingPlugin(),
@@ -37,6 +29,13 @@ module.exports = plugins = {
         // new webpack.optimize.UglifyJsPlugin({
         //     compress: { warnings: false }
         // }),
+         new ClosureCompilerPlugin({
+            compilation_level: 'ADVANCED',
+            create_source_map: false
+            // Use 'create_source_map: false' to override your webpack
+            // config. Otherwise, anything you set for this option will be
+            // ignored in favour of your 'devtool' and filename configuration.
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
