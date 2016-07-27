@@ -55,11 +55,60 @@ class BookmarkList extends Component {
 
     constructor(props) {
         super(props)
+        this.items          = this.props.store.bookmarks.items
+        this.itemsLength    = this.items ? this.items.length : 0,
+        this.itemsPerPage   = 3
+
         this.state = {
             inputValue: false,
-            disabledButton: true
+            disabledButton: true,
+            itemsLength: this.itemsLength,
+            itemsPerPage: this.itemsPerPage,
+            currentPage: 0,
+            numberOfPages: Math.ceil(this.itemsLength / this.itemsPerPage),
+            showEarlier: false,
+            showLater: true,
+            earliest: 0,
+            latest: this.itemsPerPage - 1,
         }
+    }
 
+    calculatePaginateVisablity(action) {
+        const   deliveriesCount   = this.state.itemsLength
+        var     pageCount         = this.state.numberOfPages
+
+        switch (action) {
+            case this.increase:
+                this.state.currentPage += 1
+                this.setState({showEarlier: true})
+                this.state.currentPage >= pageCount ? this.setState({showLater: false}) : null
+                break
+
+            case this.decrease:
+                this.state.currentPage -= 1
+                this.setState({showLater: true})
+                this.state.currentPage <= 1 ? this.setState({showEarlier: false}) : null
+                break
+
+            default:
+                return
+        }
+    }
+
+    laterDeliveries(event) {
+        event.preventDefault()
+        this.setState({
+            earliest: this.state.earliest + (this.state.itemsPerPage - 1),
+            latest: this.state.latest + (this.state.itemsPerPage - 1)
+        }, _ => this.calculatePaginateVisablity(this.increase) )
+    }
+
+    earlierDeliveries(event) {
+        event.preventDefault()
+        this.setState({
+            earliest: this.state.earliest - (this.state.itemsPerPage - 1),
+            latest: this.state.latest - (this.state.itemsPerPage - 1)
+        }, _ => this.calculatePaginateVisablity(this.decrease) )
     }
 
     handleInputChange(event) {
@@ -80,21 +129,35 @@ class BookmarkList extends Component {
         this.props.nextStep()
     }
 
+    showPagination() {
+        for (let i = 0; i <= this.state.numberOfPages; i++) {
+            return (
+                <span>{i}</span>
+            )
+        }
+    }
 
     render () {
+        var earliest                = this.state.earliest
+        var latest                  = this.state.latest
+
         if ( this.props.store.bookmarks && this.props.store.bookmarks.items ) {
+
             var items = this.props.store.bookmarks.items.map( (bookmark, index) => {
 
-                return (
-                    <BookmarkItem
-                        {...bookmark}
-                        key={index}
-                        edit={this.props.store.editBookmark}
-                        delete={this.props.store.deleteBookmark}
-                        bookmarks={this.props.store.bookmarks}
-                        index={index}
-                        />
-                )
+                if ( index >= earliest && index <= latest ) {
+
+                    return (
+                        <BookmarkItem
+                            {...bookmark}
+                            key={index}
+                            edit={this.props.store.editBookmark}
+                            delete={this.props.store.deleteBookmark}
+                            bookmarks={this.props.store.bookmarks}
+                            index={index}
+                            />
+                    )
+                }
             })
         } else {
             var items = 'You currently have no bookmarks'
@@ -114,6 +177,22 @@ class BookmarkList extends Component {
                 <ol>
                     {items}
                 </ol>
+
+                <footer className="clearfix">
+                    { this.state.showEarlier ? <a
+                        href="#"
+                        onClick={this.earlierDeliveries.bind(this)}
+                        className='no-link deliveries__more deliveries__more--earlier'>
+                        Earlier Deliveries
+                    </a> : undefined }
+
+                    { this.state.showLater ? <a
+                        href="#"
+                        onClick={this.laterDeliveries.bind(this)}
+                        className='no-link deliveries__more deliveries__more--later'>
+                        Later Deliveries
+                    </a> : undefined }
+                </footer>
             </div>
         );
     }
