@@ -127,7 +127,7 @@ class BookmarkList extends Component {
 
     checkButton() {
         this.setState({
-            disabledButton: this.state.inputValue !== '' ? false : true
+            disabledButton: this.state.inputValid ? false : true
         })
     }
 
@@ -190,7 +190,7 @@ class BookmarkList extends Component {
 
                     {this.showInputErrors()}
 
-                    <button disabled={this.state.disabledButton} className="button button__primary" type="submit" >Add a bookmark</button>
+                    <button disabled={this.state.disabledButton} className="button button__success" type="submit" >Add a bookmark</button>
                 </form>
 
                 <h2>Check out all the bookmarks</h2>
