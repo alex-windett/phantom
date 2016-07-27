@@ -7191,7 +7191,7 @@
   \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(/*! react-redux */ 199);var _store=__webpack_require__(/*! ./store */ 222);var _BookmarkApp=__webpack_require__(/*! ./components/BookmarkApp */ 232);var _BookmarkApp2=_interopRequireDefault(_BookmarkApp);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Bookmarks=function(_React$Component){_inherits(Bookmarks,_React$Component);function Bookmarks(){_classCallCheck(this,Bookmarks);return _possibleConstructorReturn(this,Object.getPrototypeOf(Bookmarks).call(this));}_createClass(Bookmarks,[{key:'render',value:function render(){return _react2.default.createElement(_reactRedux.Provider,{store:_store.store},_react2.default.createElement(_BookmarkApp2.default,null));}}]);return Bookmarks;}(_react2.default.Component);exports.default=Bookmarks;
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(/*! react-redux */ 199);var _store=__webpack_require__(/*! ./store */ 222);var _BookmarkApp=__webpack_require__(/*! ./components/BookmarkApp */ 231);var _BookmarkApp2=_interopRequireDefault(_BookmarkApp);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Bookmarks=function(_React$Component){_inherits(Bookmarks,_React$Component);function Bookmarks(){_classCallCheck(this,Bookmarks);return _possibleConstructorReturn(this,Object.getPrototypeOf(Bookmarks).call(this));}_createClass(Bookmarks,[{key:'render',value:function render(){return _react2.default.createElement(_reactRedux.Provider,{store:_store.store},_react2.default.createElement(_BookmarkApp2.default,null));}}]);return Bookmarks;}(_react2.default.Component);exports.default=Bookmarks;
 
 /***/ },
 /* 199 */
@@ -7821,55 +7821,45 @@
   \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _ActionConstants=__webpack_require__(/*! ../constants/ActionConstants */ 231);function _toConsumableArray(arr){if(Array.isArray(arr)){for(var i=0,arr2=Array(arr.length);i<arr.length;i++){arr2[i]=arr[i];}return arr2;}else{return Array.from(arr);}}function bookmarks(){var state=arguments.length<=0||arguments[0]===undefined?[]:arguments[0];var action=arguments[1];switch(action.type){case _ActionConstants.CREATE_BOOKMARK:debugger;return[].concat(_toConsumableArray(state),[{id:Date.now(),name:action.name,displayName:action.displayName}]);case _ActionConstants.EDIT_BOOKMARK:return{};case _ActionConstants.DELETE_BOOKMARK:var id=action.data;// debugger
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _ActionConstants=__webpack_require__(/*! ../constants/ActionConstants */ 252);function bookmarks(){var state=arguments.length<=0||arguments[0]===undefined?[]:arguments[0];var action=arguments[1];switch(action.type){case _ActionConstants.CREATE_BOOKMARK:var newBookmark={id:Date.now(),name:action.name,displayName:action.displayName};return _extends({},state);case _ActionConstants.EDIT_BOOKMARK:return{};case _ActionConstants.DELETE_BOOKMARK:var id=action.data;// debugger
 	return{// state.filter(c => c.id !== id)
 	};case _ActionConstants.SAVE_FORM_DATA:return _extends({},state,{savedInputValue:action.input});default:return state;}}exports.default=bookmarks;
 
 /***/ },
 /* 231 */
-/*!*********************************************!*\
-  !*** ./src/js/constants/ActionConstants.js ***!
-  \*********************************************/
-/***/ function(module, exports) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});// Deliveries
-	var CREATE_BOOKMARK=exports.CREATE_BOOKMARK='CREATE_BOOKMARK';var EDIT_BOOKMARK=exports.EDIT_BOOKMARK='EDIT_BOOKMARK';var DELETE_BOOKMARK=exports.DELETE_BOOKMARK='DELETE_BOOKMARK';var SAVE_FORM_DATA=exports.SAVE_FORM_DATA='SAVE_FORM_DATA';
-
-/***/ },
-/* 232 */
 /*!******************************************!*\
   !*** ./src/js/components/BookmarkApp.js ***!
   \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _redux=__webpack_require__(/*! redux */ 206);var _reactRedux=__webpack_require__(/*! react-redux */ 199);var _actionCreators=__webpack_require__(/*! ../actions/actionCreators */ 233);var actionCreators=_interopRequireWildcard(_actionCreators);var _Bookmark=__webpack_require__(/*! ./Bookmark/Bookmark */ 253);var _Bookmark2=_interopRequireDefault(_Bookmark);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _interopRequireWildcard(obj){if(obj&&obj.__esModule){return obj;}else{var newObj={};if(obj!=null){for(var key in obj){if(Object.prototype.hasOwnProperty.call(obj,key))newObj[key]=obj[key];}}newObj.default=obj;return newObj;}}function mapStateToProps(state){return{bookmarks:state.bookmarks};}function mapDispatchToProps(dispatch){return(0,_redux.bindActionCreators)(actionCreators,dispatch);}var BookmarkApp=(0,_reactRedux.connect)(mapStateToProps,mapDispatchToProps)(_Bookmark2.default);exports.default=BookmarkApp;
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _redux=__webpack_require__(/*! redux */ 206);var _reactRedux=__webpack_require__(/*! react-redux */ 199);var _actionCreators=__webpack_require__(/*! ../actions/actionCreators */ 232);var actionCreators=_interopRequireWildcard(_actionCreators);var _Bookmark=__webpack_require__(/*! ./Bookmark/Bookmark */ 253);var _Bookmark2=_interopRequireDefault(_Bookmark);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _interopRequireWildcard(obj){if(obj&&obj.__esModule){return obj;}else{var newObj={};if(obj!=null){for(var key in obj){if(Object.prototype.hasOwnProperty.call(obj,key))newObj[key]=obj[key];}}newObj.default=obj;return newObj;}}function mapStateToProps(state){return{bookmarks:state.bookmarks};}function mapDispatchToProps(dispatch){return(0,_redux.bindActionCreators)(actionCreators,dispatch);}var BookmarkApp=(0,_reactRedux.connect)(mapStateToProps,mapDispatchToProps)(_Bookmark2.default);exports.default=BookmarkApp;
 
 /***/ },
-/* 233 */
+/* 232 */
 /*!******************************************!*\
   !*** ./src/js/actions/actionCreators.js ***!
   \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});exports.addBookmark=addBookmark;exports.editBookmark=editBookmark;exports.deleteBookmark=deleteBookmark;exports.savedFormData=savedFormData;var _axios=__webpack_require__(/*! axios */ 234);var _axios2=_interopRequireDefault(_axios);var _ActionConstants=__webpack_require__(/*! ../constants/ActionConstants */ 231);var Action=_interopRequireWildcard(_ActionConstants);function _interopRequireWildcard(obj){if(obj&&obj.__esModule){return obj;}else{var newObj={};if(obj!=null){for(var key in obj){if(Object.prototype.hasOwnProperty.call(obj,key))newObj[key]=obj[key];}}newObj.default=obj;return newObj;}}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function addBookmark(name,displayName){return function(dispatch){dispatch({type:Action.CREATE_BOOKMARK,name:name,displayName:displayName});};}function editBookmark(data){return function(dispatch){dispatch({type:Action.EDIT_BOOKMARK,data:data});};}function deleteBookmark(id){return function(dispatch){dispatch({type:Action.DELETE_BOOKMARK,id:id});};}function savedFormData(input){return function(dispatch){dispatch({type:Action.SAVE_FORM_DATA,input:input});};}
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});exports.addBookmark=addBookmark;exports.editBookmark=editBookmark;exports.deleteBookmark=deleteBookmark;exports.savedFormData=savedFormData;var _axios=__webpack_require__(/*! axios */ 233);var _axios2=_interopRequireDefault(_axios);var _ActionConstants=__webpack_require__(/*! ../constants/ActionConstants */ 252);var Action=_interopRequireWildcard(_ActionConstants);function _interopRequireWildcard(obj){if(obj&&obj.__esModule){return obj;}else{var newObj={};if(obj!=null){for(var key in obj){if(Object.prototype.hasOwnProperty.call(obj,key))newObj[key]=obj[key];}}newObj.default=obj;return newObj;}}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function addBookmark(name,displayName){return function(dispatch){dispatch({type:Action.CREATE_BOOKMARK,name:name,displayName:displayName});};}function editBookmark(data){return function(dispatch){dispatch({type:Action.EDIT_BOOKMARK,data:data});};}function deleteBookmark(id){return function(dispatch){dispatch({type:Action.DELETE_BOOKMARK,id:id});};}function savedFormData(input){return function(dispatch){dispatch({type:Action.SAVE_FORM_DATA,input:input});};}
 
 /***/ },
-/* 234 */
+/* 233 */
 /*!**************************!*\
   !*** ./~/axios/index.js ***!
   \**************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';module.exports=__webpack_require__(/*! ./lib/axios */ 235);
+	'use strict';module.exports=__webpack_require__(/*! ./lib/axios */ 234);
 
 /***/ },
-/* 235 */
+/* 234 */
 /*!******************************!*\
   !*** ./~/axios/lib/axios.js ***!
   \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var defaults=__webpack_require__(/*! ./defaults */ 236);var utils=__webpack_require__(/*! ./utils */ 237);var dispatchRequest=__webpack_require__(/*! ./core/dispatchRequest */ 239);var InterceptorManager=__webpack_require__(/*! ./core/InterceptorManager */ 248);var isAbsoluteURL=__webpack_require__(/*! ./helpers/isAbsoluteURL */ 249);var combineURLs=__webpack_require__(/*! ./helpers/combineURLs */ 250);var bind=__webpack_require__(/*! ./helpers/bind */ 251);var transformData=__webpack_require__(/*! ./helpers/transformData */ 243);function Axios(defaultConfig){this.defaults=utils.merge({},defaultConfig);this.interceptors={request:new InterceptorManager(),response:new InterceptorManager()};}Axios.prototype.request=function request(config){/*eslint no-param-reassign:0*/// Allow for axios('example/url'[, config]) a la fetch API
+	'use strict';var defaults=__webpack_require__(/*! ./defaults */ 235);var utils=__webpack_require__(/*! ./utils */ 236);var dispatchRequest=__webpack_require__(/*! ./core/dispatchRequest */ 238);var InterceptorManager=__webpack_require__(/*! ./core/InterceptorManager */ 247);var isAbsoluteURL=__webpack_require__(/*! ./helpers/isAbsoluteURL */ 248);var combineURLs=__webpack_require__(/*! ./helpers/combineURLs */ 249);var bind=__webpack_require__(/*! ./helpers/bind */ 250);var transformData=__webpack_require__(/*! ./helpers/transformData */ 242);function Axios(defaultConfig){this.defaults=utils.merge({},defaultConfig);this.interceptors={request:new InterceptorManager(),response:new InterceptorManager()};}Axios.prototype.request=function request(config){/*eslint no-param-reassign:0*/// Allow for axios('example/url'[, config]) a la fetch API
 	if(typeof config==='string'){config=utils.merge({url:arguments[0]},arguments[1]);}config=utils.merge(defaults,this.defaults,{method:'get'},config);// Support baseURL config
 	if(config.baseURL&&!isAbsoluteURL(config.url)){config.url=combineURLs(config.baseURL,config.url);}// Don't allow overriding defaults.withCredentials
 	config.withCredentials=config.withCredentials||this.defaults.withCredentials;// Transform request data
@@ -7879,20 +7869,20 @@
 	axios.Axios=Axios;// Expose properties from defaultInstance
 	axios.defaults=defaultInstance.defaults;axios.interceptors=defaultInstance.interceptors;// Factory for creating new instances
 	axios.create=function create(defaultConfig){return new Axios(defaultConfig);};// Expose all/spread
-	axios.all=function all(promises){return Promise.all(promises);};axios.spread=__webpack_require__(/*! ./helpers/spread */ 252);// Provide aliases for supported request methods
+	axios.all=function all(promises){return Promise.all(promises);};axios.spread=__webpack_require__(/*! ./helpers/spread */ 251);// Provide aliases for supported request methods
 	utils.forEach(['delete','get','head'],function forEachMethodNoData(method){/*eslint func-names:0*/Axios.prototype[method]=function(url,config){return this.request(utils.merge(config||{},{method:method,url:url}));};axios[method]=bind(Axios.prototype[method],defaultInstance);});utils.forEach(['post','put','patch'],function forEachMethodWithData(method){/*eslint func-names:0*/Axios.prototype[method]=function(url,data,config){return this.request(utils.merge(config||{},{method:method,url:url,data:data}));};axios[method]=bind(Axios.prototype[method],defaultInstance);});
 
 /***/ },
-/* 236 */
+/* 235 */
 /*!*********************************!*\
   !*** ./~/axios/lib/defaults.js ***!
   \*********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var utils=__webpack_require__(/*! ./utils */ 237);var normalizeHeaderName=__webpack_require__(/*! ./helpers/normalizeHeaderName */ 238);var PROTECTION_PREFIX=/^\)\]\}',?\n/;var DEFAULT_CONTENT_TYPE={'Content-Type':'application/x-www-form-urlencoded'};function setContentTypeIfUnset(headers,value){if(!utils.isUndefined(headers)&&utils.isUndefined(headers['Content-Type'])){headers['Content-Type']=value;}}module.exports={transformRequest:[function transformRequest(data,headers){normalizeHeaderName(headers,'Content-Type');if(utils.isFormData(data)||utils.isArrayBuffer(data)||utils.isStream(data)||utils.isFile(data)||utils.isBlob(data)){return data;}if(utils.isArrayBufferView(data)){return data.buffer;}if(utils.isURLSearchParams(data)){setContentTypeIfUnset(headers,'application/x-www-form-urlencoded;charset=utf-8');return data.toString();}if(utils.isObject(data)){setContentTypeIfUnset(headers,'application/json;charset=utf-8');return JSON.stringify(data);}return data;}],transformResponse:[function transformResponse(data){/*eslint no-param-reassign:0*/if(typeof data==='string'){data=data.replace(PROTECTION_PREFIX,'');try{data=JSON.parse(data);}catch(e){/* Ignore */}}return data;}],headers:{common:{'Accept':'application/json, text/plain, */*'},patch:utils.merge(DEFAULT_CONTENT_TYPE),post:utils.merge(DEFAULT_CONTENT_TYPE),put:utils.merge(DEFAULT_CONTENT_TYPE)},timeout:0,xsrfCookieName:'XSRF-TOKEN',xsrfHeaderName:'X-XSRF-TOKEN',maxContentLength:-1,validateStatus:function validateStatus(status){return status>=200&&status<300;}};
+	'use strict';var utils=__webpack_require__(/*! ./utils */ 236);var normalizeHeaderName=__webpack_require__(/*! ./helpers/normalizeHeaderName */ 237);var PROTECTION_PREFIX=/^\)\]\}',?\n/;var DEFAULT_CONTENT_TYPE={'Content-Type':'application/x-www-form-urlencoded'};function setContentTypeIfUnset(headers,value){if(!utils.isUndefined(headers)&&utils.isUndefined(headers['Content-Type'])){headers['Content-Type']=value;}}module.exports={transformRequest:[function transformRequest(data,headers){normalizeHeaderName(headers,'Content-Type');if(utils.isFormData(data)||utils.isArrayBuffer(data)||utils.isStream(data)||utils.isFile(data)||utils.isBlob(data)){return data;}if(utils.isArrayBufferView(data)){return data.buffer;}if(utils.isURLSearchParams(data)){setContentTypeIfUnset(headers,'application/x-www-form-urlencoded;charset=utf-8');return data.toString();}if(utils.isObject(data)){setContentTypeIfUnset(headers,'application/json;charset=utf-8');return JSON.stringify(data);}return data;}],transformResponse:[function transformResponse(data){/*eslint no-param-reassign:0*/if(typeof data==='string'){data=data.replace(PROTECTION_PREFIX,'');try{data=JSON.parse(data);}catch(e){/* Ignore */}}return data;}],headers:{common:{'Accept':'application/json, text/plain, */*'},patch:utils.merge(DEFAULT_CONTENT_TYPE),post:utils.merge(DEFAULT_CONTENT_TYPE),put:utils.merge(DEFAULT_CONTENT_TYPE)},timeout:0,xsrfCookieName:'XSRF-TOKEN',xsrfHeaderName:'X-XSRF-TOKEN',maxContentLength:-1,validateStatus:function validateStatus(status){return status>=200&&status<300;}};
 
 /***/ },
-/* 237 */
+/* 236 */
 /*!******************************!*\
   !*** ./~/axios/lib/utils.js ***!
   \******************************/
@@ -8020,16 +8010,16 @@
 	 */function merge()/* obj1, obj2, obj3, ... */{var result={};function assignValue(val,key){if(_typeof(result[key])==='object'&&(typeof val==='undefined'?'undefined':_typeof(val))==='object'){result[key]=merge(result[key],val);}else{result[key]=val;}}for(var i=0,l=arguments.length;i<l;i++){forEach(arguments[i],assignValue);}return result;}module.exports={isArray:isArray,isArrayBuffer:isArrayBuffer,isFormData:isFormData,isArrayBufferView:isArrayBufferView,isString:isString,isNumber:isNumber,isObject:isObject,isUndefined:isUndefined,isDate:isDate,isFile:isFile,isBlob:isBlob,isFunction:isFunction,isStream:isStream,isURLSearchParams:isURLSearchParams,isStandardBrowserEnv:isStandardBrowserEnv,forEach:forEach,merge:merge,trim:trim};
 
 /***/ },
-/* 238 */
+/* 237 */
 /*!****************************************************!*\
   !*** ./~/axios/lib/helpers/normalizeHeaderName.js ***!
   \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var utils=__webpack_require__(/*! ../utils */ 237);module.exports=function normalizeHeaderName(headers,normalizedName){utils.forEach(headers,function processHeader(value,name){if(name!==normalizedName&&name.toUpperCase()===normalizedName.toUpperCase()){headers[normalizedName]=value;delete headers[name];}});};
+	'use strict';var utils=__webpack_require__(/*! ../utils */ 236);module.exports=function normalizeHeaderName(headers,normalizedName){utils.forEach(headers,function processHeader(value,name){if(name!==normalizedName&&name.toUpperCase()===normalizedName.toUpperCase()){headers[normalizedName]=value;delete headers[name];}});};
 
 /***/ },
-/* 239 */
+/* 238 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/core/dispatchRequest.js ***!
   \*********************************************/
@@ -8043,18 +8033,18 @@
 	 * @returns {Promise} The Promise to be fulfilled
 	 */module.exports=function dispatchRequest(config){return new Promise(function executor(resolve,reject){try{var adapter;if(typeof config.adapter==='function'){// For custom adapter support
 	adapter=config.adapter;}else if(typeof XMLHttpRequest!=='undefined'){// For browsers use XHR adapter
-	adapter=__webpack_require__(/*! ../adapters/xhr */ 240);}else if(typeof process!=='undefined'){// For node use HTTP adapter
-	adapter=__webpack_require__(/*! ../adapters/http */ 240);}if(typeof adapter==='function'){adapter(resolve,reject,config);}}catch(e){reject(e);}});};
+	adapter=__webpack_require__(/*! ../adapters/xhr */ 239);}else if(typeof process!=='undefined'){// For node use HTTP adapter
+	adapter=__webpack_require__(/*! ../adapters/http */ 239);}if(typeof adapter==='function'){adapter(resolve,reject,config);}}catch(e){reject(e);}});};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/node-libs-browser/~/process/browser.js */ 33)))
 
 /***/ },
-/* 240 */
+/* 239 */
 /*!*************************************!*\
   !*** ./~/axios/lib/adapters/xhr.js ***!
   \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {'use strict';var utils=__webpack_require__(/*! ./../utils */ 237);var buildURL=__webpack_require__(/*! ./../helpers/buildURL */ 241);var parseHeaders=__webpack_require__(/*! ./../helpers/parseHeaders */ 242);var transformData=__webpack_require__(/*! ./../helpers/transformData */ 243);var isURLSameOrigin=__webpack_require__(/*! ./../helpers/isURLSameOrigin */ 244);var btoa=typeof window!=='undefined'&&window.btoa||__webpack_require__(/*! ./../helpers/btoa */ 245);var settle=__webpack_require__(/*! ../helpers/settle */ 246);module.exports=function xhrAdapter(resolve,reject,config){var requestData=config.data;var requestHeaders=config.headers;if(utils.isFormData(requestData)){delete requestHeaders['Content-Type'];// Let the browser set it
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';var utils=__webpack_require__(/*! ./../utils */ 236);var buildURL=__webpack_require__(/*! ./../helpers/buildURL */ 240);var parseHeaders=__webpack_require__(/*! ./../helpers/parseHeaders */ 241);var transformData=__webpack_require__(/*! ./../helpers/transformData */ 242);var isURLSameOrigin=__webpack_require__(/*! ./../helpers/isURLSameOrigin */ 243);var btoa=typeof window!=='undefined'&&window.btoa||__webpack_require__(/*! ./../helpers/btoa */ 244);var settle=__webpack_require__(/*! ../helpers/settle */ 245);module.exports=function xhrAdapter(resolve,reject,config){var requestData=config.data;var requestHeaders=config.headers;if(utils.isFormData(requestData)){delete requestHeaders['Content-Type'];// Let the browser set it
 	}var request=new XMLHttpRequest();var loadEvent='onreadystatechange';var xDomain=false;// For IE 8/9 CORS support
 	// Only supports POST and GET calls and doesn't returns the response headers.
 	// DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
@@ -8075,7 +8065,7 @@
 	request=null;};// Add xsrf header
 	// This is only done if running in a standard browser environment.
 	// Specifically not if we're in a web worker, or react-native.
-	if(utils.isStandardBrowserEnv()){var cookies=__webpack_require__(/*! ./../helpers/cookies */ 247);// Add xsrf header
+	if(utils.isStandardBrowserEnv()){var cookies=__webpack_require__(/*! ./../helpers/cookies */ 246);// Add xsrf header
 	var xsrfValue=config.withCredentials||isURLSameOrigin(config.url)?cookies.read(config.xsrfCookieName):undefined;if(xsrfValue){requestHeaders[config.xsrfHeaderName]=xsrfValue;}}// Add headers to the request
 	if('setRequestHeader'in request){utils.forEach(requestHeaders,function setRequestHeader(val,key){if(typeof requestData==='undefined'&&key.toLowerCase()==='content-type'){// Remove Content-Type if data is undefined
 	delete requestHeaders[key];}else{// Otherwise add header to the request
@@ -8087,13 +8077,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/node-libs-browser/~/process/browser.js */ 33)))
 
 /***/ },
-/* 241 */
+/* 240 */
 /*!*****************************************!*\
   !*** ./~/axios/lib/helpers/buildURL.js ***!
   \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var utils=__webpack_require__(/*! ./../utils */ 237);function encode(val){return encodeURIComponent(val).replace(/%40/gi,'@').replace(/%3A/gi,':').replace(/%24/g,'$').replace(/%2C/gi,',').replace(/%20/g,'+').replace(/%5B/gi,'[').replace(/%5D/gi,']');}/**
+	'use strict';var utils=__webpack_require__(/*! ./../utils */ 236);function encode(val){return encodeURIComponent(val).replace(/%40/gi,'@').replace(/%3A/gi,':').replace(/%24/g,'$').replace(/%2C/gi,',').replace(/%20/g,'+').replace(/%5B/gi,'[').replace(/%5D/gi,']');}/**
 	 * Build a URL by appending params to the end
 	 *
 	 * @param {string} url The base of the url (e.g., http://www.google.com)
@@ -8102,13 +8092,13 @@
 	 */module.exports=function buildURL(url,params,paramsSerializer){/*eslint no-param-reassign:0*/if(!params){return url;}var serializedParams;if(paramsSerializer){serializedParams=paramsSerializer(params);}else if(utils.isURLSearchParams(params)){serializedParams=params.toString();}else{var parts=[];utils.forEach(params,function serialize(val,key){if(val===null||typeof val==='undefined'){return;}if(utils.isArray(val)){key=key+'[]';}if(!utils.isArray(val)){val=[val];}utils.forEach(val,function parseValue(v){if(utils.isDate(v)){v=v.toISOString();}else if(utils.isObject(v)){v=JSON.stringify(v);}parts.push(encode(key)+'='+encode(v));});});serializedParams=parts.join('&');}if(serializedParams){url+=(url.indexOf('?')===-1?'?':'&')+serializedParams;}return url;};
 
 /***/ },
-/* 242 */
+/* 241 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/helpers/parseHeaders.js ***!
   \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var utils=__webpack_require__(/*! ./../utils */ 237);/**
+	'use strict';var utils=__webpack_require__(/*! ./../utils */ 236);/**
 	 * Parse headers into an object
 	 *
 	 * ```
@@ -8123,13 +8113,13 @@
 	 */module.exports=function parseHeaders(headers){var parsed={};var key;var val;var i;if(!headers){return parsed;}utils.forEach(headers.split('\n'),function parser(line){i=line.indexOf(':');key=utils.trim(line.substr(0,i)).toLowerCase();val=utils.trim(line.substr(i+1));if(key){parsed[key]=parsed[key]?parsed[key]+', '+val:val;}});return parsed;};
 
 /***/ },
-/* 243 */
+/* 242 */
 /*!**********************************************!*\
   !*** ./~/axios/lib/helpers/transformData.js ***!
   \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var utils=__webpack_require__(/*! ./../utils */ 237);/**
+	'use strict';var utils=__webpack_require__(/*! ./../utils */ 236);/**
 	 * Transform the data for a request or a response
 	 *
 	 * @param {Object|String} data The data to be transformed
@@ -8139,13 +8129,13 @@
 	 */module.exports=function transformData(data,headers,fns){/*eslint no-param-reassign:0*/utils.forEach(fns,function transform(fn){data=fn(data,headers);});return data;};
 
 /***/ },
-/* 244 */
+/* 243 */
 /*!************************************************!*\
   !*** ./~/axios/lib/helpers/isURLSameOrigin.js ***!
   \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var utils=__webpack_require__(/*! ./../utils */ 237);module.exports=utils.isStandardBrowserEnv()?// Standard browser envs have full support of the APIs needed to test
+	'use strict';var utils=__webpack_require__(/*! ./../utils */ 236);module.exports=utils.isStandardBrowserEnv()?// Standard browser envs have full support of the APIs needed to test
 	// whether the request URL is of the same origin as current location.
 	function standardBrowserEnv(){var msie=/(msie|trident)/i.test(navigator.userAgent);var urlParsingNode=document.createElement('a');var originURL;/**
 	    * Parse a URL to discover it's components
@@ -8163,7 +8153,7 @@
 	function nonStandardBrowserEnv(){return function isURLSameOrigin(){return true;};}();
 
 /***/ },
-/* 245 */
+/* 244 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/btoa.js ***!
   \*************************************/
@@ -8178,7 +8168,7 @@
 	output+=map.charAt(63&block>>8-idx%1*8)){charCode=str.charCodeAt(idx+=3/4);if(charCode>0xFF){throw new E();}block=block<<8|charCode;}return output;}module.exports=btoa;
 
 /***/ },
-/* 246 */
+/* 245 */
 /*!***************************************!*\
   !*** ./~/axios/lib/helpers/settle.js ***!
   \***************************************/
@@ -8194,24 +8184,24 @@
 	if(!response.status||!validateStatus||validateStatus(response.status)){resolve(response);}else{reject(response);}};
 
 /***/ },
-/* 247 */
+/* 246 */
 /*!****************************************!*\
   !*** ./~/axios/lib/helpers/cookies.js ***!
   \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var utils=__webpack_require__(/*! ./../utils */ 237);module.exports=utils.isStandardBrowserEnv()?// Standard browser envs support document.cookie
+	'use strict';var utils=__webpack_require__(/*! ./../utils */ 236);module.exports=utils.isStandardBrowserEnv()?// Standard browser envs support document.cookie
 	function standardBrowserEnv(){return{write:function write(name,value,expires,path,domain,secure){var cookie=[];cookie.push(name+'='+encodeURIComponent(value));if(utils.isNumber(expires)){cookie.push('expires='+new Date(expires).toGMTString());}if(utils.isString(path)){cookie.push('path='+path);}if(utils.isString(domain)){cookie.push('domain='+domain);}if(secure===true){cookie.push('secure');}document.cookie=cookie.join('; ');},read:function read(name){var match=document.cookie.match(new RegExp('(^|;\\s*)('+name+')=([^;]*)'));return match?decodeURIComponent(match[3]):null;},remove:function remove(name){this.write(name,'',Date.now()-86400000);}};}():// Non standard browser env (web workers, react-native) lack needed support.
 	function nonStandardBrowserEnv(){return{write:function write(){},read:function read(){return null;},remove:function remove(){}};}();
 
 /***/ },
-/* 248 */
+/* 247 */
 /*!************************************************!*\
   !*** ./~/axios/lib/core/InterceptorManager.js ***!
   \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var utils=__webpack_require__(/*! ./../utils */ 237);function InterceptorManager(){this.handlers=[];}/**
+	'use strict';var utils=__webpack_require__(/*! ./../utils */ 236);function InterceptorManager(){this.handlers=[];}/**
 	 * Add a new interceptor to the stack
 	 *
 	 * @param {Function} fulfilled The function to handle `then` for a `Promise`
@@ -8232,7 +8222,7 @@
 	 */InterceptorManager.prototype.forEach=function forEach(fn){utils.forEach(this.handlers,function forEachHandler(h){if(h!==null){fn(h);}});};module.exports=InterceptorManager;
 
 /***/ },
-/* 249 */
+/* 248 */
 /*!**********************************************!*\
   !*** ./~/axios/lib/helpers/isAbsoluteURL.js ***!
   \**********************************************/
@@ -8249,7 +8239,7 @@
 	return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);};
 
 /***/ },
-/* 250 */
+/* 249 */
 /*!********************************************!*\
   !*** ./~/axios/lib/helpers/combineURLs.js ***!
   \********************************************/
@@ -8264,7 +8254,7 @@
 	 */module.exports=function combineURLs(baseURL,relativeURL){return baseURL.replace(/\/+$/,'')+'/'+relativeURL.replace(/^\/+/,'');};
 
 /***/ },
-/* 251 */
+/* 250 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/bind.js ***!
   \*************************************/
@@ -8273,7 +8263,7 @@
 	'use strict';module.exports=function bind(fn,thisArg){return function wrap(){var args=new Array(arguments.length);for(var i=0;i<args.length;i++){args[i]=arguments[i];}return fn.apply(thisArg,args);};};
 
 /***/ },
-/* 252 */
+/* 251 */
 /*!***************************************!*\
   !*** ./~/axios/lib/helpers/spread.js ***!
   \***************************************/
@@ -8301,14 +8291,34 @@
 	 */module.exports=function spread(callback){return function wrap(arr){return callback.apply(null,arr);};};
 
 /***/ },
+/* 252 */
+/*!*********************************************!*\
+  !*** ./src/js/constants/ActionConstants.js ***!
+  \*********************************************/
+/***/ function(module, exports) {
+
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});// Deliveries
+	var CREATE_BOOKMARK=exports.CREATE_BOOKMARK='CREATE_BOOKMARK';var EDIT_BOOKMARK=exports.EDIT_BOOKMARK='EDIT_BOOKMARK';var DELETE_BOOKMARK=exports.DELETE_BOOKMARK='DELETE_BOOKMARK';var SAVE_FORM_DATA=exports.SAVE_FORM_DATA='SAVE_FORM_DATA';
+
+/***/ },
 /* 253 */
 /*!*************************************************!*\
   !*** ./src/js/components/Bookmark/Bookmark.jsx ***!
   \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);var _BookmarkList=__webpack_require__(/*! ./BookmarkList */ 257);var _BookmarkList2=_interopRequireDefault(_BookmarkList);var _BookmarkCreate=__webpack_require__(/*! ./BookmarkCreate */ 258);var _BookmarkCreate2=_interopRequireDefault(_BookmarkCreate);var _BookmarkConfirmation=__webpack_require__(/*! ./BookmarkConfirmation */ 279);var _BookmarkConfirmation2=_interopRequireDefault(_BookmarkConfirmation);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Bookmark=function(_React$Component){_inherits(Bookmark,_React$Component);function Bookmark(props){_classCallCheck(this,Bookmark);var _this=_possibleConstructorReturn(this,Object.getPrototypeOf(Bookmark).call(this,props));_this.nextStep=_this.nextStep.bind(_this);_this.scrollToTopOfWndow=_this.scrollToTopOfWndow.bind(_this);_this.state={// First stage = 0, takes the index of each component
-	currentStep:0};return _this;}_createClass(Bookmark,[{key:'getChildContext',value:function getChildContext(){return{bookmarks:this.props.bookmarks,store:this.props};}},{key:'scrollToTopOfWndow',value:function scrollToTopOfWndow(){$(window).scrollTop(0);}},{key:'nextStep',value:function nextStep(){this.setState({currentStep:this.state.currentStep+1});}},{key:'showStep',value:function showStep(){switch(this.state.currentStep){case 0:return{element:_react2.default.createElement(_BookmarkList2.default,{fieldValues:this.state.fieldValues,nextStep:this.nextStep,saveValues:this.saveValues,hasSavedValue:this.hasSavedValue,store:this.props})};case 1:return{element:_react2.default.createElement(_BookmarkCreate2.default,{scrollTop:this.scrollToTopOfWndow,fieldValues:this.state.fieldValues,nextStep:this.nextStep,previousStep:this.previousStep,saveValues:this.saveValues,hasSavedValue:this.hasSavedValue,store:this.props})};case 2:return{element:_react2.default.createElement(_BookmarkConfirmation2.default,{scrollTop:this.scrollToTopOfWndow,fieldValues:this.state.fieldValues,hasSavedValue:this.hasSavedValue,store:this.props})};}}},{key:'render',value:function render(){var currentStep=this.showStep();return _react2.default.createElement('article',{className:'registration__wrapper'},currentStep.element);}}]);return Bookmark;}(_react2.default.Component);Bookmark.childContextTypes={store:_react2.default.PropTypes.object,bookmarks:_react2.default.PropTypes.array||_react2.default.PropTypes.object};exports.default=Bookmark;
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);var _BookmarkList=__webpack_require__(/*! ./BookmarkList */ 257);var _BookmarkList2=_interopRequireDefault(_BookmarkList);var _BookmarkCreate=__webpack_require__(/*! ./BookmarkCreate */ 258);var _BookmarkCreate2=_interopRequireDefault(_BookmarkCreate);var _BookmarkConfirmation=__webpack_require__(/*! ./BookmarkConfirmation */ 259);var _BookmarkConfirmation2=_interopRequireDefault(_BookmarkConfirmation);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Bookmark=function(_React$Component){_inherits(Bookmark,_React$Component);function Bookmark(props){_classCallCheck(this,Bookmark);var _this=_possibleConstructorReturn(this,Object.getPrototypeOf(Bookmark).call(this,props));_this.nextStep=_this.nextStep.bind(_this);_this.scrollToTopOfWndow=_this.scrollToTopOfWndow.bind(_this);_this.state={// First stage = 0, takes the index of each component
+	currentStep:0};return _this;}// getChildContext() {
+	//     return {
+	//         bookmarks: this.props.bookmarks,
+	//         store: this.props
+	//     }
+	// }
+	_createClass(Bookmark,[{key:'scrollToTopOfWndow',value:function scrollToTopOfWndow(){$(window).scrollTop(0);}},{key:'nextStep',value:function nextStep(){this.setState({currentStep:this.state.currentStep+1});}},{key:'showStep',value:function showStep(){switch(this.state.currentStep){case 0:return{element:_react2.default.createElement(_BookmarkList2.default,{fieldValues:this.state.fieldValues,nextStep:this.nextStep,saveValues:this.saveValues,hasSavedValue:this.hasSavedValue,store:this.props})};case 1:return{element:_react2.default.createElement(_BookmarkCreate2.default,{scrollTop:this.scrollToTopOfWndow,fieldValues:this.state.fieldValues,nextStep:this.nextStep,previousStep:this.previousStep,saveValues:this.saveValues,hasSavedValue:this.hasSavedValue,store:this.props})};case 2:return{element:_react2.default.createElement(_BookmarkConfirmation2.default,{scrollTop:this.scrollToTopOfWndow,fieldValues:this.state.fieldValues,hasSavedValue:this.hasSavedValue,store:this.props})};}}},{key:'render',value:function render(){var currentStep=this.showStep();return _react2.default.createElement('article',{className:'registration__wrapper'},currentStep.element);}}]);return Bookmark;}(_react2.default.Component);// Bookmark.childContextTypes = {
+	//   store: React.PropTypes.object,
+	//   bookmarks: React.PropTypes.array || React.PropTypes.object
+	// }
+	exports.default=Bookmark;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! jquery */ 254)))
 
 /***/ },
@@ -9801,7 +9811,11 @@
   \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var BookmarkItem=function(_Component){_inherits(BookmarkItem,_Component);function BookmarkItem(props){_classCallCheck(this,BookmarkItem);return _possibleConstructorReturn(this,Object.getPrototypeOf(BookmarkItem).call(this,props));}_createClass(BookmarkItem,[{key:'render',value:function render(){return _react2.default.createElement('li',null,_react2.default.createElement('a',{href:this.props.url?this.props.url:'#'},this.props.name),_react2.default.createElement('button',{className:'button button__primary',onClick:this.props.edit},'Edit'),_react2.default.createElement('button',{className:'button button__primary',onClick:this.props.delete},'Delete'));}}]);return BookmarkItem;}(_react.Component);var BookmarkList=function(_Component2){_inherits(BookmarkList,_Component2);function BookmarkList(props){_classCallCheck(this,BookmarkList);var _this2=_possibleConstructorReturn(this,Object.getPrototypeOf(BookmarkList).call(this,props));_this2.state={inputValue:false,disabledButton:true};return _this2;}_createClass(BookmarkList,[{key:'handleInputChange',value:function handleInputChange(event){var _this3=this;this.setState({inputValue:event.target.value},function(_){return _this3.checkButton();});}},{key:'checkButton',value:function checkButton(){this.setState({disabledButton:this.state.inputValue!==''?false:true});}},{key:'submitForm',value:function submitForm(event){event.preventDefault();this.props.store.savedFormData(this.state.inputValue);this.props.nextStep();}},{key:'render',value:function render(){var _this4=this;var items=this.context.bookmarks.map(function(bookmark,index){return _react2.default.createElement(BookmarkItem,_extends({},bookmark,{key:index,edit:_this4.context.store.editBookmark,'delete':_this4.context.store.deleteBookmark,bookmarks:_this4.context.store.bookmarks,index:index}));});return _react2.default.createElement('div',{className:'decoration decoration__plain registration__form'},_react2.default.createElement('h1',null,'List of all the bookmarks'),_react2.default.createElement('form',{refs:'addNewBookark',onSubmit:this.submitForm.bind(this)},_react2.default.createElement('input',{type:'text',placeholder:'Add a new bookmark',onChange:this.handleInputChange.bind(this)}),_react2.default.createElement('button',{disabled:this.state.disabledButton,className:'button button__primary',type:'submit'},'Add a bookmark')),_react2.default.createElement('h2',null,'Check out all the bookmarks'),_react2.default.createElement('ol',null,items));}}]);return BookmarkList;}(_react.Component);BookmarkList.contextTypes={bookmarks:_react2.default.PropTypes.array||_react2.default.PropTypes.object,store:_react2.default.PropTypes.object};exports.default=BookmarkList;
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var BookmarkItem=function(_Component){_inherits(BookmarkItem,_Component);function BookmarkItem(props){_classCallCheck(this,BookmarkItem);return _possibleConstructorReturn(this,Object.getPrototypeOf(BookmarkItem).call(this,props));}_createClass(BookmarkItem,[{key:'render',value:function render(){return _react2.default.createElement('li',null,_react2.default.createElement('a',{href:this.props.url?this.props.url:'#'},this.props.name),_react2.default.createElement('button',{className:'button button__primary',onClick:this.props.edit},'Edit'),_react2.default.createElement('button',{className:'button button__primary',onClick:this.props.delete},'Delete'));}}]);return BookmarkItem;}(_react.Component);var BookmarkList=function(_Component2){_inherits(BookmarkList,_Component2);function BookmarkList(props){_classCallCheck(this,BookmarkList);var _this2=_possibleConstructorReturn(this,Object.getPrototypeOf(BookmarkList).call(this,props));_this2.state={inputValue:false,disabledButton:true};return _this2;}_createClass(BookmarkList,[{key:'handleInputChange',value:function handleInputChange(event){var _this3=this;this.setState({inputValue:event.target.value},function(_){return _this3.checkButton();});}},{key:'checkButton',value:function checkButton(){this.setState({disabledButton:this.state.inputValue!==''?false:true});}},{key:'submitForm',value:function submitForm(event){event.preventDefault();this.props.store.savedFormData(this.state.inputValue);this.props.nextStep();}},{key:'render',value:function render(){var _this4=this;var items=this.props.store.bookmarks.map(function(bookmark,index){return _react2.default.createElement(BookmarkItem,_extends({},bookmark,{key:index,edit:_this4.props.store.editBookmark,'delete':_this4.props.store.deleteBookmark,bookmarks:_this4.props.store.bookmarks,index:index}));});return _react2.default.createElement('div',{className:'decoration decoration__plain registration__form'},_react2.default.createElement('h1',null,'List of all the bookmarks'),_react2.default.createElement('form',{refs:'addNewBookark',onSubmit:this.submitForm.bind(this)},_react2.default.createElement('input',{type:'text',placeholder:'Add a new bookmark',onChange:this.handleInputChange.bind(this)}),_react2.default.createElement('button',{disabled:this.state.disabledButton,className:'button button__primary',type:'submit'},'Add a bookmark')),_react2.default.createElement('h2',null,'Check out all the bookmarks'),_react2.default.createElement('ol',null,items));}}]);return BookmarkList;}(_react.Component);// BookmarkList.contextTypes = {
+	//     bookmarks: React.PropTypes.array || React.PropTypes.object,
+	//     store: React.PropTypes.object
+	// };
+	exports.default=BookmarkList;
 
 /***/ },
 /* 258 */
@@ -9810,30 +9824,25 @@
   \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);var _axios=__webpack_require__(/*! axios */ 234);var _axios2=_interopRequireDefault(_axios);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var BookmarkCreate=function(_React$Component){_inherits(BookmarkCreate,_React$Component);function BookmarkCreate(props){_classCallCheck(this,BookmarkCreate);var _this=_possibleConstructorReturn(this,Object.getPrototypeOf(BookmarkCreate).call(this,props));_this.state={inputValue:_this.props.store.bookmarks.savedInputValue,inputNameValue:false,disabledButton:false,bookmarkData:false,isValidURL:false};return _this;}_createClass(BookmarkCreate,[{key:'componentWillMount',value:function componentWillMount(){this.checkURL(this.props.store.bookmarks.savedInputValue);}},{key:'checkURL',value:function checkURL(url){var _this2=this;_axios2.default.get(url).then(function(response){_this2.setState({isValidURL:true});}).catch(function(error){_this2.setState({isValidURL:false});});}},{key:'handleURLInputChange',value:function handleURLInputChange(event){var _this3=this;this.setState({inputValue:event.target.value},function(_){_this3.checkButton();_this3.checkURL(_this3.state.inputValue);});}},{key:'handleNameInputChange',value:function handleNameInputChange(event){this.setState({inputNameValue:event.target.value});}},{key:'checkButton',value:function checkButton(){this.setState({disabledButton:this.state.inputValue!==''?false:true});}},{key:'submitForm',value:function submitForm(event){event.preventDefault();debugger;this.props.store.addBookmark(this.state.inputValue,this.state.inputNameValue);}},{key:'showPagePreview',value:function showPagePreview(){if(this.state.isValidURL){return _react2.default.createElement('div',null,_react2.default.createElement('h3',null,'Page Preview'),_react2.default.createElement('p',null,'Is this the page you were after?'),_react2.default.createElement('iframe',{src:this.state.inputValue,width:'500px',height:'500px'}));}else{return _react2.default.createElement('h3',null,'It looks like that isn\'t a page');}}},{key:'render',value:function render(){return _react2.default.createElement('div',{className:'decoration decoration__plain registration__form'},_react2.default.createElement('form',{refs:'addNewBookark',onSubmit:this.submitForm.bind(this)},_react2.default.createElement('input',{type:'text',defaultValue:this.props.store.bookmarks.savedInputValue,onChange:this.handleURLInputChange.bind(this)}),_react2.default.createElement('input',{type:'text',placeholder:'Create a name for the bookmark (Optional)',onChange:this.handleNameInputChange.bind(this)}),_react2.default.createElement('button',{disabled:this.state.disabledButton,className:'button button__primary',type:'submit'},'Confirm')),this.showPagePreview());}}]);return BookmarkCreate;}(_react2.default.Component);exports.default=BookmarkCreate;
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);var _axios=__webpack_require__(/*! axios */ 233);var _axios2=_interopRequireDefault(_axios);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var BookmarkCreate=function(_React$Component){_inherits(BookmarkCreate,_React$Component);function BookmarkCreate(props){_classCallCheck(this,BookmarkCreate);var _this=_possibleConstructorReturn(this,Object.getPrototypeOf(BookmarkCreate).call(this,props));_this.state={inputValue:_this.props.store.bookmarks.savedInputValue,inputNameValue:false,disabledButton:false,bookmarkData:false,isValidURL:false};return _this;}_createClass(BookmarkCreate,[{key:'componentWillMount',value:function componentWillMount(){this.checkURL(this.props.store.bookmarks.savedInputValue);}},{key:'checkURL',value:function checkURL(url){var _this2=this;_axios2.default.get(url).then(function(response){_this2.setState({isValidURL:true});}).catch(function(error){_this2.setState({isValidURL:false});});}},{key:'handleURLInputChange',value:function handleURLInputChange(event){var _this3=this;this.setState({inputValue:event.target.value},function(_){_this3.checkButton();_this3.checkURL(_this3.state.inputValue);});}},{key:'handleNameInputChange',value:function handleNameInputChange(event){this.setState({inputNameValue:event.target.value});}},{key:'checkButton',value:function checkButton(){this.setState({disabledButton:this.state.inputValue!==''?false:true});}},{key:'submitForm',value:function submitForm(event){event.preventDefault();this.props.store.addBookmark(this.state.inputValue,this.state.inputNameValue);}},{key:'showPagePreview',value:function showPagePreview(){if(this.state.isValidURL){return _react2.default.createElement('div',null,_react2.default.createElement('h3',null,'Page Preview'),_react2.default.createElement('p',null,'Is this the page you were after?'),_react2.default.createElement('iframe',{src:this.state.inputValue,width:'500px',height:'500px'}));}else{return _react2.default.createElement('h3',null,'It looks like that isn\'t a page');}}},{key:'render',value:function render(){return _react2.default.createElement('div',{className:'decoration decoration__plain registration__form'},_react2.default.createElement('form',{refs:'addNewBookark',onSubmit:this.submitForm.bind(this)},_react2.default.createElement('input',{type:'text',defaultValue:this.props.store.bookmarks.savedInputValue,onChange:this.handleURLInputChange.bind(this)}),_react2.default.createElement('input',{type:'text',placeholder:'Create a name for the bookmark (Optional)',onChange:this.handleNameInputChange.bind(this)}),_react2.default.createElement('button',{disabled:this.state.disabledButton,className:'button button__primary',type:'submit'},'Confirm')),this.showPagePreview());}}]);return BookmarkCreate;}(_react2.default.Component);exports.default=BookmarkCreate;
 
 /***/ },
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */
+/* 259 */
+/*!*************************************************************!*\
+  !*** ./src/js/components/Bookmark/BookmarkConfirmation.jsx ***!
+  \*************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);var _functions=__webpack_require__(/*! ../../helpers/functions */ 260);var _shareCodeDecorator=__webpack_require__(/*! ../../helpers/shareCodeDecorator */ 261);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var BookmarkConfirmation=function(_React$Component){_inherits(BookmarkConfirmation,_React$Component);function BookmarkConfirmation(props){_classCallCheck(this,BookmarkConfirmation);var _this=_possibleConstructorReturn(this,Object.getPrototypeOf(BookmarkConfirmation).call(this,props));_this.state={friend_code:'',firstName:''};return _this;}_createClass(BookmarkConfirmation,[{key:'render',value:function render(){return _react2.default.createElement('div',{className:'row decoration decoration__tape decoration__tape--left confirmation'},'You have successfully created a new BookmarkConfirmation');}}]);return BookmarkConfirmation;}(_react2.default.Component);BookmarkConfirmation.propTypes={fieldValues:_react2.default.PropTypes.object,store:_react2.default.PropTypes.object};exports.default=BookmarkConfirmation;
+
+/***/ },
+/* 260 */
 /*!*************************************!*\
   !*** ./src/js/helpers/functions.js ***!
   \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {"use strict";Object.defineProperty(exports,"__esModule",{value:true});exports.getQueryFromURL=getQueryFromURL;exports.findById=findById;exports.deleteById=deleteById;exports.isInvalidInput=isInvalidInput;exports.getURL=getURL;exports.getPostcodes=getPostcodes;exports.sanatizePostcode=sanatizePostcode;exports.getDeliveryDay=getDeliveryDay;exports.addDividerToExpiryInput=addDividerToExpiryInput;exports.addSpaceToCardInput=addSpaceToCardInput;exports.validateUniqueEmailURL=validateUniqueEmailURL;exports.validateReferalCode=validateReferalCode;var _axios=__webpack_require__(/*! axios */ 234);var _axios2=_interopRequireDefault(_axios);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/**
+	/* WEBPACK VAR INJECTION */(function($) {"use strict";Object.defineProperty(exports,"__esModule",{value:true});exports.getQueryFromURL=getQueryFromURL;exports.findById=findById;exports.deleteById=deleteById;exports.isInvalidInput=isInvalidInput;exports.getURL=getURL;exports.getPostcodes=getPostcodes;exports.sanatizePostcode=sanatizePostcode;exports.getDeliveryDay=getDeliveryDay;exports.addDividerToExpiryInput=addDividerToExpiryInput;exports.addSpaceToCardInput=addSpaceToCardInput;exports.validateUniqueEmailURL=validateUniqueEmailURL;exports.validateReferalCode=validateReferalCode;var _axios=__webpack_require__(/*! axios */ 233);var _axios2=_interopRequireDefault(_axios);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/**
 	    * @param name   {string} - the name of the query
 	    * @param url    {string} - the url to search, defaults to current location
 	
@@ -9879,27 +9888,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! jquery */ 254)))
 
 /***/ },
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */
-/*!*************************************************************!*\
-  !*** ./src/js/components/Bookmark/BookmarkConfirmation.jsx ***!
-  \*************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 31);var _react2=_interopRequireDefault(_react);var _functions=__webpack_require__(/*! ../../helpers/functions */ 273);var _shareCodeDecorator=__webpack_require__(/*! ../../helpers/shareCodeDecorator */ 280);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var BookmarkConfirmation=function(_React$Component){_inherits(BookmarkConfirmation,_React$Component);function BookmarkConfirmation(props){_classCallCheck(this,BookmarkConfirmation);var _this=_possibleConstructorReturn(this,Object.getPrototypeOf(BookmarkConfirmation).call(this,props));_this.state={friend_code:'',firstName:''};return _this;}_createClass(BookmarkConfirmation,[{key:'render',value:function render(){return _react2.default.createElement('div',{className:'row decoration decoration__tape decoration__tape--left confirmation'},'You have successfully created a new BookmarkConfirmation');}}]);return BookmarkConfirmation;}(_react2.default.Component);BookmarkConfirmation.propTypes={fieldValues:_react2.default.PropTypes.object,store:_react2.default.PropTypes.object};exports.default=BookmarkConfirmation;
-
-/***/ },
-/* 280 */
+/* 261 */
 /*!**********************************************!*\
   !*** ./src/js/helpers/shareCodeDecorator.js ***!
   \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});exports.ShareCodeDecorator=undefined;var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _functions=__webpack_require__(/*! ./functions */ 273);function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var ShareCodeDecorator=exports.ShareCodeDecorator=function(){function ShareCodeDecorator(code){_classCallCheck(this,ShareCodeDecorator);this.code=code;return this;}_createClass(ShareCodeDecorator,[{key:'getTwitterURL',value:function getTwitterURL(){return'http://www.twitter.com/share?url=hwww.freddiesflowers.com&text=Sign+up+for+a+bunch+of+free+flowers+using+my+invitation+code+at+'+this.code+'+'+(0,_functions.getURL)('/invite/email/'+this.code);}},{key:'getFacebookURL',value:function getFacebookURL(){return'https://www.facebook.com/sharer/sharer.php?u=http%3A//www.freddiesflowers.com/';}},{key:'getEmailContent',value:function getEmailContent(){return'mailto:?subject=Fancy free flowers?&body=I\'ve signed up to have Freddie\'s Flowers delivered every week for just £20 a pop. If you fancy giving it a whirl – with free flowers for the first week! – just sign up using my offer code '+this.code+'. You can do that, or find out more, right here: '+window.location.hostname+'/invite/email/'+this.code;}},{key:'getSMSContet',value:function getSMSContet(){return'sms';}},{key:'getCode',value:function getCode(){return this.code;}}]);return ShareCodeDecorator;}();
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});exports.ShareCodeDecorator=undefined;var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _functions=__webpack_require__(/*! ./functions */ 260);function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var ShareCodeDecorator=exports.ShareCodeDecorator=function(){function ShareCodeDecorator(code){_classCallCheck(this,ShareCodeDecorator);this.code=code;return this;}_createClass(ShareCodeDecorator,[{key:'getTwitterURL',value:function getTwitterURL(){return'http://www.twitter.com/share?url=hwww.freddiesflowers.com&text=Sign+up+for+a+bunch+of+free+flowers+using+my+invitation+code+at+'+this.code+'+'+(0,_functions.getURL)('/invite/email/'+this.code);}},{key:'getFacebookURL',value:function getFacebookURL(){return'https://www.facebook.com/sharer/sharer.php?u=http%3A//www.freddiesflowers.com/';}},{key:'getEmailContent',value:function getEmailContent(){return'mailto:?subject=Fancy free flowers?&body=I\'ve signed up to have Freddie\'s Flowers delivered every week for just £20 a pop. If you fancy giving it a whirl – with free flowers for the first week! – just sign up using my offer code '+this.code+'. You can do that, or find out more, right here: '+window.location.hostname+'/invite/email/'+this.code;}},{key:'getSMSContet',value:function getSMSContet(){return'sms';}},{key:'getCode',value:function getCode(){return this.code;}}]);return ShareCodeDecorator;}();
 
 /***/ }
 /******/ ]);

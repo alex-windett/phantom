@@ -56,7 +56,6 @@ class BookmarkCreate extends React.Component {
 
     submitForm(event) {
         event.preventDefault()
-        debugger
         this.props.store.addBookmark(this.state.inputValue, this.state.inputNameValue)
     }
 

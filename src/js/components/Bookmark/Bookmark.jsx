@@ -16,12 +16,12 @@ class Bookmark extends React.Component {
         }
     }
 
-    getChildContext() {
-        return {
-            bookmarks: this.props.bookmarks,
-            store: this.props
-        }
-    }
+    // getChildContext() {
+    //     return {
+    //         bookmarks: this.props.bookmarks,
+    //         store: this.props
+    //     }
+    // }
 
     scrollToTopOfWndow() {
          $(window).scrollTop(0)
@@ -83,9 +83,9 @@ class Bookmark extends React.Component {
     }
 }
 
-Bookmark.childContextTypes = {
-  store: React.PropTypes.object,
-  bookmarks: React.PropTypes.array || React.PropTypes.object
-}
+// Bookmark.childContextTypes = {
+//   store: React.PropTypes.object,
+//   bookmarks: React.PropTypes.array || React.PropTypes.object
+// }
 
 export default Bookmark

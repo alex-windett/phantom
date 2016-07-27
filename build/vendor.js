@@ -48,7 +48,7 @@
   \***********************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';__webpack_require__(/*! script!foundation-sites/js/foundation.core.js */ 281);__webpack_require__(/*! script!foundation-sites/js/foundation.util.mediaQuery.js */ 284);__webpack_require__(/*! script!foundation-sites/js/foundation.util.triggers.js */ 286);__webpack_require__(/*! script!foundation-sites/js/foundation.util.box.js */ 288);__webpack_require__(/*! script!foundation-sites/js/foundation.util.keyboard.js */ 290);__webpack_require__(/*! script!foundation-sites/js/foundation.reveal.js */ 292);__webpack_require__(/*! script!foundation-sites/js/foundation.util.motion.js */ 294);__webpack_require__(/*! script!foundation-sites/js/foundation.util.timerAndImageLoader.js */ 296);__webpack_require__(/*! script!foundation-sites/js/foundation.equalizer.js */ 298);$(document).ready(function($){$(document).foundation();});/**
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';__webpack_require__(/*! script!foundation-sites/js/foundation.core.js */ 262);__webpack_require__(/*! script!foundation-sites/js/foundation.util.mediaQuery.js */ 265);__webpack_require__(/*! script!foundation-sites/js/foundation.util.triggers.js */ 267);__webpack_require__(/*! script!foundation-sites/js/foundation.util.box.js */ 269);__webpack_require__(/*! script!foundation-sites/js/foundation.util.keyboard.js */ 271);__webpack_require__(/*! script!foundation-sites/js/foundation.reveal.js */ 273);__webpack_require__(/*! script!foundation-sites/js/foundation.util.motion.js */ 275);__webpack_require__(/*! script!foundation-sites/js/foundation.util.timerAndImageLoader.js */ 277);__webpack_require__(/*! script!foundation-sites/js/foundation.equalizer.js */ 279);$(document).ready(function($){$(document).foundation();});/**
 	    FOUNDATION IMPORTS
 
 	    As there is still some issues with importing Foundation into Webpack, we have
@@ -1553,17 +1553,17 @@
 
 /***/ },
 
-/***/ 281:
+/***/ 262:
 /*!***********************************************************************************!*\
   !*** ./~/script-loader!./bower_components/foundation-sites/js/foundation.core.js ***!
   \***********************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! !./~/script-loader/addScript.js */ 282)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.core.js */ 283)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.core.js")
+	__webpack_require__(/*! !./~/script-loader/addScript.js */ 263)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.core.js */ 264)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.core.js")
 
 /***/ },
 
-/***/ 282:
+/***/ 263:
 /*!**************************************!*\
   !*** ./~/script-loader/addScript.js ***!
   \**************************************/
@@ -1583,7 +1583,7 @@
 
 /***/ },
 
-/***/ 283:
+/***/ 264:
 /*!********************************************************************************************************************************!*\
   !*** ./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.core.js ***!
   \********************************************************************************************************************************/
@@ -1593,17 +1593,17 @@
 
 /***/ },
 
-/***/ 284:
+/***/ 265:
 /*!**********************************************************************************************!*\
   !*** ./~/script-loader!./bower_components/foundation-sites/js/foundation.util.mediaQuery.js ***!
   \**********************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! !./~/script-loader/addScript.js */ 282)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.mediaQuery.js */ 285)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.mediaQuery.js")
+	__webpack_require__(/*! !./~/script-loader/addScript.js */ 263)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.mediaQuery.js */ 266)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.mediaQuery.js")
 
 /***/ },
 
-/***/ 285:
+/***/ 266:
 /*!*******************************************************************************************************************************************!*\
   !*** ./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.mediaQuery.js ***!
   \*******************************************************************************************************************************************/
@@ -1613,17 +1613,17 @@
 
 /***/ },
 
-/***/ 286:
+/***/ 267:
 /*!********************************************************************************************!*\
   !*** ./~/script-loader!./bower_components/foundation-sites/js/foundation.util.triggers.js ***!
   \********************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! !./~/script-loader/addScript.js */ 282)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.triggers.js */ 287)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.triggers.js")
+	__webpack_require__(/*! !./~/script-loader/addScript.js */ 263)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.triggers.js */ 268)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.triggers.js")
 
 /***/ },
 
-/***/ 287:
+/***/ 268:
 /*!*****************************************************************************************************************************************!*\
   !*** ./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.triggers.js ***!
   \*****************************************************************************************************************************************/
@@ -1633,17 +1633,17 @@
 
 /***/ },
 
-/***/ 288:
+/***/ 269:
 /*!***************************************************************************************!*\
   !*** ./~/script-loader!./bower_components/foundation-sites/js/foundation.util.box.js ***!
   \***************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! !./~/script-loader/addScript.js */ 282)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.box.js */ 289)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.box.js")
+	__webpack_require__(/*! !./~/script-loader/addScript.js */ 263)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.box.js */ 270)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.box.js")
 
 /***/ },
 
-/***/ 289:
+/***/ 270:
 /*!************************************************************************************************************************************!*\
   !*** ./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.box.js ***!
   \************************************************************************************************************************************/
@@ -1653,17 +1653,17 @@
 
 /***/ },
 
-/***/ 290:
+/***/ 271:
 /*!********************************************************************************************!*\
   !*** ./~/script-loader!./bower_components/foundation-sites/js/foundation.util.keyboard.js ***!
   \********************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! !./~/script-loader/addScript.js */ 282)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.keyboard.js */ 291)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.keyboard.js")
+	__webpack_require__(/*! !./~/script-loader/addScript.js */ 263)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.keyboard.js */ 272)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.keyboard.js")
 
 /***/ },
 
-/***/ 291:
+/***/ 272:
 /*!*****************************************************************************************************************************************!*\
   !*** ./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.keyboard.js ***!
   \*****************************************************************************************************************************************/
@@ -1673,17 +1673,17 @@
 
 /***/ },
 
-/***/ 292:
+/***/ 273:
 /*!*************************************************************************************!*\
   !*** ./~/script-loader!./bower_components/foundation-sites/js/foundation.reveal.js ***!
   \*************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! !./~/script-loader/addScript.js */ 282)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.reveal.js */ 293)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.reveal.js")
+	__webpack_require__(/*! !./~/script-loader/addScript.js */ 263)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.reveal.js */ 274)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.reveal.js")
 
 /***/ },
 
-/***/ 293:
+/***/ 274:
 /*!**********************************************************************************************************************************!*\
   !*** ./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.reveal.js ***!
   \**********************************************************************************************************************************/
@@ -1693,17 +1693,17 @@
 
 /***/ },
 
-/***/ 294:
+/***/ 275:
 /*!******************************************************************************************!*\
   !*** ./~/script-loader!./bower_components/foundation-sites/js/foundation.util.motion.js ***!
   \******************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! !./~/script-loader/addScript.js */ 282)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.motion.js */ 295)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.motion.js")
+	__webpack_require__(/*! !./~/script-loader/addScript.js */ 263)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.motion.js */ 276)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.motion.js")
 
 /***/ },
 
-/***/ 295:
+/***/ 276:
 /*!***************************************************************************************************************************************!*\
   !*** ./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.motion.js ***!
   \***************************************************************************************************************************************/
@@ -1713,17 +1713,17 @@
 
 /***/ },
 
-/***/ 296:
+/***/ 277:
 /*!*******************************************************************************************************!*\
   !*** ./~/script-loader!./bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js ***!
   \*******************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! !./~/script-loader/addScript.js */ 282)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js */ 297)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js")
+	__webpack_require__(/*! !./~/script-loader/addScript.js */ 263)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js */ 278)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js")
 
 /***/ },
 
-/***/ 297:
+/***/ 278:
 /*!****************************************************************************************************************************************************!*\
   !*** ./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js ***!
   \****************************************************************************************************************************************************/
@@ -1733,17 +1733,17 @@
 
 /***/ },
 
-/***/ 298:
+/***/ 279:
 /*!****************************************************************************************!*\
   !*** ./~/script-loader!./bower_components/foundation-sites/js/foundation.equalizer.js ***!
   \****************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! !./~/script-loader/addScript.js */ 282)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.equalizer.js */ 299)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.equalizer.js")
+	__webpack_require__(/*! !./~/script-loader/addScript.js */ 263)(__webpack_require__(/*! !./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.equalizer.js */ 280)+"\n\n// SCRIPT-LOADER FOOTER\n//# sourceURL=script:///Users/alexwindett/Sites/phantom/node_modules/babel-loader/index.js%3F%7B%22presets%22:%5B%22es2015%22,%22react%22%5D%7D!/Users/alexwindett/Sites/phantom/bower_components/foundation-sites/js/foundation.equalizer.js")
 
 /***/ },
 
-/***/ 299:
+/***/ 280:
 /*!*************************************************************************************************************************************!*\
   !*** ./~/raw-loader!./~/babel-loader?{"presets":["es2015","react"]}!./bower_components/foundation-sites/js/foundation.equalizer.js ***!
   \*************************************************************************************************************************************/

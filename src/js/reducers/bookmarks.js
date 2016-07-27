@@ -8,15 +8,17 @@ import {
 function bookmarks(state = [], action ) {
     switch (action.type) {
         case CREATE_BOOKMARK:
-        debugger
-            return [
-                ...state.bookmarks,
-                {
-                    id: Date.now(),
-                    name: action.name,
-                    displayName: action.displayName
-                }
-            ]
+
+            var newBookmark = {
+                id: Date.now(),
+                name: action.name,
+                displayName: action.displayName
+            }
+
+            return {
+                ...state
+            }
+
 
         case EDIT_BOOKMARK:
             return {

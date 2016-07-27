@@ -52,15 +52,15 @@ class BookmarkList extends Component {
 
     render () {
 
-        const items = this.context.bookmarks.map( (bookmark, index) => {
+        const items = this.props.store.bookmarks.map( (bookmark, index) => {
 
             return (
                 <BookmarkItem
                     {...bookmark}
                     key={index}
-                    edit={this.context.store.editBookmark}
-                    delete={this.context.store.deleteBookmark}
-                    bookmarks={this.context.store.bookmarks}
+                    edit={this.props.store.editBookmark}
+                    delete={this.props.store.deleteBookmark}
+                    bookmarks={this.props.store.bookmarks}
                     index={index}
                     />
             )
@@ -85,9 +85,9 @@ class BookmarkList extends Component {
     }
 }
 
-BookmarkList.contextTypes = {
-    bookmarks: React.PropTypes.array || React.PropTypes.object,
-    store: React.PropTypes.object
-};
+// BookmarkList.contextTypes = {
+//     bookmarks: React.PropTypes.array || React.PropTypes.object,
+//     store: React.PropTypes.object
+// };
 
 export default BookmarkList
