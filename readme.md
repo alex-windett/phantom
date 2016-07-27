@@ -9,7 +9,7 @@ The app can be found [here](https://windett.co.uk/phantom)
 N.B The app require CORS to display a preview of the webpack, (this extension)[https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi] Chrome extension is advised.
 
 ## Local development
-To run the app locally:
+To run the app locally make sure you have Java JDK and node installed
 
 Clone or fork the repo, then:
 
