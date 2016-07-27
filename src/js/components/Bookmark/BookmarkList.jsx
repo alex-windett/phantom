@@ -4,6 +4,30 @@ class BookmarkItem extends Component {
 
     constructor(props) {
         super(props)
+
+        this.state = {
+            isEditing: false,
+            editedInput: this.props.name,
+        }
+    }
+
+    inputChange(event) {
+        this.setState({
+            editedInput: event.target.value
+        })
+    }
+
+    toggleEdit() {
+        this.setState({
+            isEditing: this.state.isEditing ? false : true
+        })
+    }
+
+    submitEdit() {
+        this.props.edit(this.props.index, this.state.editedInput)
+        this.setState({
+            isEditing: false
+        })
     }
 
     render() {
@@ -13,7 +37,14 @@ class BookmarkItem extends Component {
                 <a href={this.props.url ? this.props.url : '#'}>
                     {this.props.name}
                 </a>
-                <button className="button button__primary" onClick={ () => this.props.edit(this.props.index)}>Edit</button>
+
+                { this.state.isEditing ?
+                    <div>
+                        <input defaultValue={this.props.name} />
+                        <button onClick={this.submitEdit.bind(this)}>Update</button>
+                    </div> : undefined }
+
+                <button className="button button__primary" onClick={this.toggleEdit.bind(this)}>Edit</button>
                 <button className="button button__primary" onClick={ () => this.props.delete(this.props.index)}>Delete</button>
             </li>
         )
