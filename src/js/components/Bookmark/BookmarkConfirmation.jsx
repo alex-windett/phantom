@@ -1,6 +1,4 @@
 import React from 'react'
-import { getURL } from '../../helpers/functions'
-import { ShareCodeDecorator } from '../../helpers/shareCodeDecorator'
 
 class BookmarkConfirmation extends React.Component {
 

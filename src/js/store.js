@@ -1,5 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk';
+import thunk from 'redux-thunk'
+import persistState from 'redux-localstorage'
 
 // import route reducer
 import { rootReducer } from './reducers/index'
@@ -31,11 +32,14 @@ const defaultState = {
     bookmarks
 }
 
+const enhancer = compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f,
+    persistState()
+)
+
 export const store = createStore(
     rootReducer,
     defaultState,
-    compose(
-        applyMiddleware(thunk),
-        window.devToolsExtension ? window.devToolsExtension() : f => f
-    )
+    enhancer
 )
