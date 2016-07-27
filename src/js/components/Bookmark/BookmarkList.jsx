@@ -82,19 +82,23 @@ class BookmarkList extends Component {
 
 
     render () {
-        const items = this.props.store.bookmarks.items.map( (bookmark, index) => {
+        if ( this.props.store.bookmarks && this.props.store.bookmarks.items ) {
+            var items = this.props.store.bookmarks.items.map( (bookmark, index) => {
 
-            return (
-                <BookmarkItem
-                    {...bookmark}
-                    key={index}
-                    edit={this.props.store.editBookmark}
-                    delete={this.props.store.deleteBookmark}
-                    bookmarks={this.props.store.bookmarks}
-                    index={index}
-                    />
-            )
-        })
+                return (
+                    <BookmarkItem
+                        {...bookmark}
+                        key={index}
+                        edit={this.props.store.editBookmark}
+                        delete={this.props.store.deleteBookmark}
+                        bookmarks={this.props.store.bookmarks}
+                        index={index}
+                        />
+                )
+            })
+        } else {
+            var items = 'You currently have no bookmarks'
+        }
 
         return (
             <div className="decoration decoration__plain registration__form">

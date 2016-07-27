@@ -31,12 +31,22 @@ function bookmarks(state = [], action ) {
             // return {
             //     ...state
             // }
-            return {
-                // ...state,
-                items: [
-                    ...state.items,
-                    bookmark(undefined, action)
-                ]
+
+            // There are already items in the store, get them and add the new one
+            if ( state.items ) {
+                return {
+                    // ...state,
+                    items: [
+                        ...state.items,
+                        bookmark(undefined, action)
+                    ]
+                }
+            } else {
+                return {
+                    items: [
+                        bookmark(undefined, action)
+                    ]
+                }
             }
 
         case EDIT_BOOKMARK:
@@ -51,6 +61,7 @@ function bookmarks(state = [], action ) {
             })
 
         case DELETE_BOOKMARK:
+        debugger
             return [
                     ...state.items.slice(0, action.index),
                     ...state.items.slice(action.index + 1)
