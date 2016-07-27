@@ -24,7 +24,7 @@ class BookmarkItem extends Component {
     }
 
     submitEdit() {
-        this.props.edit(this.props.index, this.state.editedInput)
+        this.props.edit(this.props.index, this.props.id, this.state.editedInput)
         this.setState({
             isEditing: false
         })

@@ -11,11 +11,12 @@ export function addBookmark(name, displayName) {
     }
 }
 
-export function editBookmark(index, newName) {
+export function editBookmark(index, id, newName) {
     return( dispatch ) => {
         dispatch({
             type: Action.EDIT_BOOKMARK,
             index,
+            id,
             newName
         })
     }

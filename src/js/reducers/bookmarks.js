@@ -50,18 +50,20 @@ function bookmarks(state = [], action ) {
             }
 
         case EDIT_BOOKMARK:
-            return state.items.map((bookmark, index) => {
-                if (index === action.index) {
-                    // Copy the object before mutating
-                    return Object.assign({}, bookmark, {
+            return {
+
+                items: [
+                    ...state.items.slice(0, action.index),
+                    {
+                        id: action.id,
                         name: action.newName
-                    })
-                }
-                return bookmark
-            })
+                    },
+                    ...state.items.slice(action.index + 1)
+                ]
+            }
 
         case DELETE_BOOKMARK:
-        
+
             return {
 
                 items: [
