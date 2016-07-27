@@ -25,16 +25,6 @@ function bookmarks(state = [], action ) {
     switch (action.type) {
         case CREATE_BOOKMARK:
 
-            // var newBookmark = {
-            //     id: Date.now(),
-            //     name: action.name,
-            //     displayName: action.displayName
-            // }
-
-            // return {
-            //     ...state
-            // }
-
             // There are already items in the store, get them and add the new one
             if ( state.items ) {
                 return {
@@ -53,26 +43,35 @@ function bookmarks(state = [], action ) {
             }
 
         case EDIT_BOOKMARK:
+
+            // Returning, but with newest first
+            var items = [
+                ...state.items.slice(0, action.index),
+                {
+                    id: action.id,
+                    name: action.newName
+                },
+                ...state.items.slice(action.index + 1)
+            ]
+            items = items.reverse()
+
             return {
 
-                items: [
-                    ...state.items.slice(0, action.index),
-                    {
-                        id: action.id,
-                        name: action.newName
-                    },
-                    ...state.items.slice(action.index + 1)
-                ]
+                items
             }
 
         case DELETE_BOOKMARK:
+        // Returning, but with newest first
+        
+            var items = [
+                ...state.items.slice(0, action.index),
+                ...state.items.slice(action.index + 1)
+            ]
+            items = items.reverse()
 
             return {
 
-                items: [
-                    ...state.items.slice(0, action.index),
-                    ...state.items.slice(action.index + 1)
-                ]
+                items
             }
 
         case ADD_DEFAULT_LOCAL_STORAGE:
