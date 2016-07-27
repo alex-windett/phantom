@@ -29,12 +29,11 @@ function bookmarks(state = [], action ) {
 
         case EDIT_BOOKMARK:
             return state.map((bookmark, index) => {
-                debugger
                 if (index === action.index) {
-                  // Copy the object before mutating
-                  return Object.assign({}, bookmark, {
-                    name: action.newName
-                  })
+                    // Copy the object before mutating
+                    return Object.assign({}, bookmark, {
+                        name: action.newName
+                    })
                 }
                 return bookmark
             })

@@ -40,7 +40,7 @@ class BookmarkItem extends Component {
 
                 { this.state.isEditing ?
                     <div>
-                        <input defaultValue={this.props.name} />
+                        <input defaultValue={this.props.name} onChange={this.inputChange.bind(this)}/>
                         <button onClick={this.submitEdit.bind(this)}>Update</button>
                     </div> : undefined }
 
