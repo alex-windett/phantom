@@ -1,4 +1,5 @@
-import React, { Component }            from 'react'
+import React, { Component }             from 'react'
+import { validateStringAsURL }          from '../../helpers/functions'
 
 class BookmarkItem extends Component {
 
@@ -72,6 +73,7 @@ class BookmarkList extends Component {
             showLater: true,
             earliest: 0,
             latest: this.itemsPerPage - 1,
+            inputValid: true
         }
     }
 
@@ -114,9 +116,13 @@ class BookmarkList extends Component {
     }
 
     handleInputChange(event) {
+        var value = event.target.value
         this.setState({
-            inputValue: event.target.value
-        }, _ => this.checkButton() )
+            inputValue: event.target.value,
+            inputValid: validateStringAsURL(value),
+        }, _ => {
+            this.checkButton()
+        })
     }
 
     checkButton() {
@@ -137,6 +143,16 @@ class BookmarkList extends Component {
                 <span>{i}</span>
             )
         }
+    }
+
+    showInputErrors() {
+        if ( !this.state.inputValid ) {
+            return (
+                <p clasName="error">That doesn't seem to be a valid url</p>
+            )
+        }
+
+        return
     }
 
     render () {
@@ -171,6 +187,8 @@ class BookmarkList extends Component {
 
                 <form refs="addNewBookark" onSubmit={this.submitForm.bind(this)} className="form form__create">
                     <input type="text" placeholder="Add a new bookmark" onChange={this.handleInputChange.bind(this)}/>
+
+                    {this.showInputErrors()}
 
                     <button disabled={this.state.disabledButton} className="button button__primary" type="submit" >Add a bookmark</button>
                 </form>
