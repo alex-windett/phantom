@@ -57,3 +57,4 @@ Below are listed the limitations of the app:
 
 - The user is unable to click on the number for pagination to switch between pages quickly
 - Can paginate beyond maximum number of pages
+- It is only hosted on github pages - so no server to run build commands from
