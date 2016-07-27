@@ -1,9 +1,12 @@
 {
   "private": true,
   "main": "./src/index.jsx",
+   "engines": {
+    "node": "5.4.1"
+},
   "scripts": {
     "start": "webpack -d --verbose --progress --colors --watch --config webpack.development.config.js",
-    "build:dist": "webpack --optimize-minimize --verbose --progress --colors --config webpack.development.config.js",
+    "build:dist": "webpack --config webpack.development.config.js",
     "dev": "npm start",
     "build": "NODE_ENV=production webpack --progress --config webpack.production.config.js",
     "clean": "rm -rf ./build",

@@ -1,4 +1,4 @@
-const path                  = require('path')
+// const path                  = require('path')
 const webpack               = require('webpack');
 const ExtractTextPlugin     = require('extract-text-webpack-plugin');
 const LiveReloadPlugin      = require('webpack-livereload-plugin');
@@ -20,7 +20,7 @@ module.exports = plugins = {
     ],
     dev: [
         new webpack.OldWatchingPlugin(),
-        new LiveReloadPlugin(),
+        // new LiveReloadPlugin(),
         new NpmInstallPlugin({
             save: true
         }),
