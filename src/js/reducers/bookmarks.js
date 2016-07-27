@@ -61,12 +61,14 @@ function bookmarks(state = [], action ) {
             })
 
         case DELETE_BOOKMARK:
-        debugger
-            return [
+        
+            return {
+
+                items: [
                     ...state.items.slice(0, action.index),
                     ...state.items.slice(action.index + 1)
                 ]
-
+            }
         case SAVE_FORM_DATA:
             return {
                 ...state,
