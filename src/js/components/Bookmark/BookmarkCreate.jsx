@@ -68,7 +68,7 @@ class BookmarkCreate extends React.Component {
 
                 <div>
                     <h2>Page Preview</h2>
-                    <p>Is this the page you were after?</p>
+                    <p>Is this the page you were after? (problems may occur because of CORS and denying use of webpage in iframe) </p>
                     <iframe src={this.state.inputValue} width="100%" height="500px"></iframe>
                 </div>
             )
@@ -95,7 +95,7 @@ class BookmarkCreate extends React.Component {
                         onChange={this.handleNameInputChange.bind(this)}
                         />
 
-                    <button disabled={this.state.disabledButton} className="button button__success" type="submit" >Confirm</button>
+                    <button disabled={!this.state.isValidURL} className="button button__success" type="submit" >Confirm</button>
                 </form>
 
                 { this.showPagePreview() }

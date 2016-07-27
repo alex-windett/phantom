@@ -35,7 +35,7 @@ class BookmarkItem extends Component {
 
         return (
             <li className="bookmarklist__item">
-                <a href={this.props.url ? this.props.url : '#'}>
+                <a target="_blank" href={this.props.name ? this.props.name : '#'}>
                     <strong>{this.props.displayName ? `${this.props.displayName} - ` : undefined }</strong>{this.props.name}
                 </a>
 
