@@ -34,20 +34,12 @@ const defaultState = {
 
 const createStoreWithMiddleware = applyMiddleware(
         thunk,
-        save({
-            states: [
-                bookmarks
-            ]
-        }) // Saving done here
+        save() // Saving done here
 
     )(createStore)
 
 export const store = createStoreWithMiddleware(
     rootReducer,
-    load({
-        states: [
-            bookmarks
-        ]
-    }),
+    load(),
     window.devToolsExtension ? window.devToolsExtension() : f => f
 )
