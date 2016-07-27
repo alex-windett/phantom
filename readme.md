@@ -56,3 +56,4 @@ Webpack was used as a build tool to assist development and production. All asset
 Below are listed the limitations of the app:
 
 - The user is unable to click on the number for pagination to switch between pages quickly
+- Can paginate beyond maximum number of pages
