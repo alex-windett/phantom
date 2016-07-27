@@ -6,6 +6,19 @@ Pagination is set to a default of three items on page load, but can be edit by e
 
 The app can be found [here](https://windett.co.uk/phantom)
 
+N.B The app require CORS to display a preview of the webpack, (this extension)[https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi] Chrome extension is advised.
+
+## Local development
+To run the app locally:
+
+Clone or fork the repo, then:
+
+`cd phantom && npm install && bower install && npm run build`
+
+To run with live reload:
+
+`npm start`
+
 ## Design
 
 The app was designed around these main prerequisites:
