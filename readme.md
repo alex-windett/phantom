@@ -49,7 +49,7 @@ As for React and Redux, consistency has been followed within the tree structure 
 
 
 ## Compilation and minification
-Webpack was used as a build tool to assist development and production. All assets have been minified for production, with Sass being passed through webpack scss loader and JavaScript with webpack's Google Closure Compiler.
+Webpack was used as a build tool to assist development and production. All assets have been minified for production, with Sass being passed through webpack scss loader and JavaScript with the JS loader. I have attempted to use Google Closure Compiler, however, ran into some issues.
 
 ## Limitations
 
