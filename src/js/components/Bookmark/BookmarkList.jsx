@@ -165,6 +165,15 @@ class BookmarkList extends Component {
         })
     }
 
+    getResultsPerPage(event) {
+        this.itemsPerPage =
+        this.setState({
+            itemsPerPage: parseInt(event.target.value),
+            numberOfPages: Math.ceil(parseInt(event.target.value) / this.itemsPerPage),
+            latest: parseInt(event.target.value) - 1,
+        })
+    }
+
     render () {
         var earliest                = this.state.earliest
         var latest                  = this.state.latest
@@ -195,7 +204,7 @@ class BookmarkList extends Component {
         var paginateNumbers = []
         for (var i = 0; i <= this.state.numberOfPages; i++) {
             paginateNumbers.push(
-                <li className={`items__more paginate__item ${i === this.state.currentPage ? 'paginate__item--active' : ''} `}>
+                <li key={i} className={`items__more paginate__item ${i === this.state.currentPage ? 'paginate__item--active' : ''} `}>
                     <a href="#" onClick={() => this.jumpToPage(i)}>
                         {i + 1}
                     </a>
@@ -206,6 +215,8 @@ class BookmarkList extends Component {
         return (
             <div>
                 <h1 className="text-center">React - Redux Bookmark Manager</h1>
+
+                <input type="number" onChange={this.getResultsPerPage.bind(this)} placeholder="How many would you like to paginate by (default 3)" />
 
                 <form refs="addNewBookark" onSubmit={this.submitForm.bind(this)} className="form form__create">
                     <input type="text" placeholder="Add a new bookmark" onChange={this.handleInputChange.bind(this)}/>
