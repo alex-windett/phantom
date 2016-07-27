@@ -174,7 +174,7 @@ class BookmarkList extends Component {
         if ( val !== '' ) {
             this.setState({
                 itemsPerPage: parseInt(val),
-                numberOfPages: Math.ceil(parseInt(val) / this.itemsPerPage),
+                numberOfPages: Math.ceil(this.state.itemsLength / parseInt(val)),
                 latest: parseInt(val) - 1,
             })
         }
