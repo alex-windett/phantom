@@ -67,8 +67,8 @@ class BookmarkList extends Component {
         this.decrease       = 'decrease'
         this.items          = this.props.store.bookmarks.items
         this.itemsLength    = this.items ? this.items.length : 0,
-        this.itemsPerPage   = 3
-        debugger
+        this.itemsPerPage   = 20
+
         this.state = {
             inputValue: false,
             disabledButton: true,
