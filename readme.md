@@ -23,7 +23,7 @@ copy the pacakge.json to rooter
 
 build
 
-`npm install && bower install && npm run build`
+`npm install && bower install && npm run build:dist`
 
 To run with live reload:
 
