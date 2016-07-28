@@ -223,7 +223,7 @@ class BookmarkList extends Component {
             <div>
                 <h1 className="text-center">React - Redux Bookmark Manager</h1>
 
-                <input type="number" onChange={this.getResultsPerPage.bind(this)} placeholder="How many would you like to paginate by (default 3)" />
+                <input type="number" onChange={this.getResultsPerPage.bind(this)} placeholder="How many would you like to paginate by (default 20)" />
 
                 <form refs="addNewBookark" onSubmit={this.submitForm.bind(this)} className="form form__create">
                     <input type="text" placeholder="Add a new bookmark" onChange={this.handleInputChange.bind(this)}/>
