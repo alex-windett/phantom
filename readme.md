@@ -6,7 +6,7 @@ A small app create in React, that allows a user to add, edit and delete bookmark
 
 Pagination is set to a default of three items on page load, but can be edit by entering a desired number.
 
-The app can be found [here](https://windett.co.uk/phantom)
+The app can be found [here](https://mysterious-bastion-41371.herokuapp.com/)
 
 N.B The app require CORS to display a preview of the webpack, (this extension)[https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi] Chrome extension is advised.
 
@@ -15,7 +15,15 @@ To run the app locally make sure you have Java JDK and node installed
 
 Clone or fork the repo, then:
 
-`cd phantom && npm install && bower install && npm run build`
+`cd phantom`
+
+copy the pacakge.json to rooter
+
+`cp build_tools/package.json package.json`
+
+build
+
+`npm install && bower install && npm run build`
 
 To run with live reload:
 
@@ -52,6 +60,9 @@ As for React and Redux, consistency has been followed within the tree structure 
 
 ## Compilation and minification
 Webpack was used as a build tool to assist development and production. All assets have been minified for production, with Sass being passed through webpack scss loader and JavaScript with the JS loader. I have attempted to use Google Closure Compiler, however, ran into some issues.
+
+## Hosting
+The app is hosted via Heroku as a static index.html page
 
 ## Limitations
 
