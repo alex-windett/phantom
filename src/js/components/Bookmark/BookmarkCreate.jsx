@@ -1,5 +1,6 @@
 import React                from 'react'
 import axios                from 'axios'
+import { validateStringAsURL } from '../../helpers/functions'
 
 class BookmarkCreate extends React.Component {
 
@@ -17,6 +18,7 @@ class BookmarkCreate extends React.Component {
 
     componentWillMount() {
         this.checkURL(this.props.store.bookmarks.savedInputValue)
+        this.checkButton()
     }
 
     checkURL(url) {
@@ -49,8 +51,9 @@ class BookmarkCreate extends React.Component {
     }
 
     checkButton() {
+        // debuggerm
         this.setState({
-            disabledButton: this.state.inputValue !== '' ? false : true
+            disabledButton: !validateStringAsURL(this.state.inputValue) || this.state.inputValue === ''
         })
     }
 
@@ -74,7 +77,7 @@ class BookmarkCreate extends React.Component {
             )
         } else {
             return (
-                <h2>It looks like that isn't a page</h2>
+                <h2>I can't seem to find that page, but if you think it should excist then continue on and its valid.</h2>
             )
         }
     }
@@ -95,7 +98,7 @@ class BookmarkCreate extends React.Component {
                         onChange={this.handleNameInputChange.bind(this)}
                         />
 
-                    <button disabled={!this.state.isValidURL} className="button button__success" type="submit" >Confirm</button>
+                    <button disabled={this.state.disabledButton} className="button button__success" type="submit" >Confirm</button>
                 </form>
 
                 { this.showPagePreview() }
