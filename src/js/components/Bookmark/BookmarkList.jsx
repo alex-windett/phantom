@@ -25,7 +25,7 @@ class BookmarkItem extends Component {
     }
 
     submitEdit() {
-        this.props.edit(this.props.index, this.props.id, this.state.editedInput)
+        this.props.edit(this.props.index, this.props.id, this.state.editedInput, this.props.displayName)
         this.setState({
             isEditing: false
         })
@@ -186,7 +186,6 @@ class BookmarkList extends Component {
 
         if ( this.props.store.bookmarks && this.props.store.bookmarks.items ) {
             var items   = this.props.store.bookmarks.items
-                items   = items.reverse() // Get reverse order i.e newest first
                 items   = this.props.store.bookmarks.items.map( (bookmark, index) => {
 
                 if ( index >= earliest && index <= latest ) {

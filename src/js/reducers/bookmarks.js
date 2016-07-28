@@ -30,8 +30,8 @@ function bookmarks(state = [], action ) {
                 return {
                     // ...state,
                     items: [
+                        bookmark(undefined, action),
                         ...state.items,
-                        bookmark(undefined, action)
                     ]
                 }
             } else {
@@ -44,34 +44,28 @@ function bookmarks(state = [], action ) {
 
         case EDIT_BOOKMARK:
 
-            // Returning, but with newest first
-            var items = [
-                ...state.items.slice(0, action.index),
-                {
-                    id: action.id,
-                    name: action.newName
-                },
-                ...state.items.slice(action.index + 1)
-            ]
-            items = items.reverse()
+
 
             return {
-
-                items
+                items: [
+                    ...state.items.slice(0, action.index),
+                    {
+                        id: action.id,
+                        name: action.newName,
+                        displayName: action.displayName
+                    },
+                    ...state.items.slice(action.index + 1)
+                ]
             }
 
         case DELETE_BOOKMARK:
-        // Returning, but with newest first
-        
-            var items = [
-                ...state.items.slice(0, action.index),
-                ...state.items.slice(action.index + 1)
-            ]
-            items = items.reverse()
 
             return {
 
-                items
+                items: [
+                    ...state.items.slice(0, action.index),
+                    ...state.items.slice(action.index + 1)
+                ]
             }
 
         case ADD_DEFAULT_LOCAL_STORAGE:
